@@ -12,14 +12,9 @@ import { DarkModeSwitch } from "./DarkModeSwitch";
 
 import { Container } from "./wrapper/Container";
 import NextLink from "next/link";
-import { useDesktopWidthCheck } from "../functions/desktopWidthCheck";
-import {
-  AddIcon,
-  EditIcon,
-  ExternalLinkIcon,
-  HamburgerIcon,
-  RepeatIcon,
-} from "@chakra-ui/icons";
+import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { menuList } from "../constants/menuList";
 
 export const CTA = () => {
   const isDesktopWidth = useDesktopWidthCheck();
@@ -45,34 +40,15 @@ export const CTA = () => {
       <Flex gridGap={2} alignItems="center">
         {isDesktopWidth ? (
           <>
-            <NextLink href="/">
-              <ChakraLink>
-                <Text fontSize="md">
-                  <b>Home</b>
-                </Text>
-              </ChakraLink>
-            </NextLink>
-            <NextLink href="/projects">
-              <ChakraLink>
-                <Text fontSize="md">
-                  <b>Projects</b>
-                </Text>
-              </ChakraLink>
-            </NextLink>
-            <NextLink href="/articles">
-              <ChakraLink>
-                <Text fontSize="md">
-                  <b>Articles</b>
-                </Text>
-              </ChakraLink>
-            </NextLink>
-            <NextLink href="/aboutme">
-              <ChakraLink>
-                <Text fontSize="md">
-                  <b>About Me</b>
-                </Text>
-              </ChakraLink>
-            </NextLink>
+            {menuList.map((menu, index) => (
+              <NextLink key={index} href={menu.route}>
+                <ChakraLink>
+                  <Text fontSize="md">
+                    <b>{menu.label}</b>
+                  </Text>
+                </ChakraLink>
+              </NextLink>
+            ))}
           </>
         ) : (
           <Menu>
@@ -83,42 +59,17 @@ export const CTA = () => {
               variant="outline"
             />
             <MenuList>
-              <NextLink href="/">
-                <MenuItem>
-                  <ChakraLink>
-                    <Text fontSize="md">
-                      <b>Home</b>
-                    </Text>
-                  </ChakraLink>
-                </MenuItem>
-              </NextLink>
-              <NextLink href="/projects">
-                <MenuItem>
-                  <ChakraLink>
-                    <Text fontSize="md">
-                      <b>Projects</b>
-                    </Text>
-                  </ChakraLink>
-                </MenuItem>
-              </NextLink>
-              <NextLink href="/articles">
-                <MenuItem>
-                  <ChakraLink>
-                    <Text fontSize="md">
-                      <b>Articles</b>
-                    </Text>
-                  </ChakraLink>
-                </MenuItem>
-              </NextLink>
-              <NextLink href="/aboutme">
-                <MenuItem>
-                  <ChakraLink>
-                    <Text fontSize="md">
-                      <b>About Me</b>
-                    </Text>
-                  </ChakraLink>
-                </MenuItem>
-              </NextLink>
+              {menuList.map((menu, index) => (
+                <NextLink key={index} href={menu.route}>
+                  <MenuItem>
+                    <ChakraLink>
+                      <Text fontSize="md">
+                        <b>{menu.label}</b>
+                      </Text>
+                    </ChakraLink>
+                  </MenuItem>
+                </NextLink>
+              ))}
             </MenuList>
           </Menu>
         )}
