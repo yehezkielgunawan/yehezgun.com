@@ -1,31 +1,129 @@
-import { Link as ChakraLink, Button } from '@chakra-ui/react'
+import {
+  Link as ChakraLink,
+  Text,
+  Flex,
+  Menu,
+  MenuButton,
+  IconButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
+import { DarkModeSwitch } from "./DarkModeSwitch";
 
-import { Container } from './Container'
+import { Container } from "./wrapper/Container";
+import NextLink from "next/link";
+import { useDesktopWidthCheck } from "../functions/desktopWidthCheck";
+import {
+  AddIcon,
+  EditIcon,
+  ExternalLinkIcon,
+  HamburgerIcon,
+  RepeatIcon,
+} from "@chakra-ui/icons";
 
-export const CTA = () => (
-  <Container
-    flexDirection="row"
-    position="fixed"
-    bottom="0"
-    width="100%"
-    maxWidth="48rem"
-    py={3}
-  >
-    <ChakraLink isExternal href="https://chakra-ui.com" flexGrow={1} mx={2}>
-      <Button width="100%" variant="outline" colorScheme="green">
-        chakra-ui
-      </Button>
-    </ChakraLink>
+export const CTA = () => {
+  const isDesktopWidth = useDesktopWidthCheck();
 
-    <ChakraLink
-      isExternal
-      href="https://github.com/vercel/next.js/blob/canary/examples/with-chakra-ui-typescript"
-      flexGrow={3}
-      mx={2}
+  return (
+    <Container
+      flexDirection="row"
+      position="fixed"
+      top="0"
+      width="100%"
+      maxWidth="48rem"
+      justifyContent="space-between"
+      p={2}
     >
-      <Button width="100%" variant="solid" colorScheme="green">
-        View Repo
-      </Button>
-    </ChakraLink>
-  </Container>
-)
+      <NextLink href="/">
+        <ChakraLink>
+          <Text fontSize="lg">
+            <b>yehezgun.com</b>
+          </Text>
+        </ChakraLink>
+      </NextLink>
+
+      <Flex gridGap={2} alignItems="center">
+        {isDesktopWidth ? (
+          <>
+            <NextLink href="/">
+              <ChakraLink>
+                <Text fontSize="md">
+                  <b>Home</b>
+                </Text>
+              </ChakraLink>
+            </NextLink>
+            <NextLink href="/projects">
+              <ChakraLink>
+                <Text fontSize="md">
+                  <b>Projects</b>
+                </Text>
+              </ChakraLink>
+            </NextLink>
+            <NextLink href="/articles">
+              <ChakraLink>
+                <Text fontSize="md">
+                  <b>Articles</b>
+                </Text>
+              </ChakraLink>
+            </NextLink>
+            <NextLink href="/aboutme">
+              <ChakraLink>
+                <Text fontSize="md">
+                  <b>About Me</b>
+                </Text>
+              </ChakraLink>
+            </NextLink>
+          </>
+        ) : (
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+            />
+            <MenuList>
+              <NextLink href="/">
+                <MenuItem>
+                  <ChakraLink>
+                    <Text fontSize="md">
+                      <b>Home</b>
+                    </Text>
+                  </ChakraLink>
+                </MenuItem>
+              </NextLink>
+              <NextLink href="/projects">
+                <MenuItem>
+                  <ChakraLink>
+                    <Text fontSize="md">
+                      <b>Projects</b>
+                    </Text>
+                  </ChakraLink>
+                </MenuItem>
+              </NextLink>
+              <NextLink href="/articles">
+                <MenuItem>
+                  <ChakraLink>
+                    <Text fontSize="md">
+                      <b>Articles</b>
+                    </Text>
+                  </ChakraLink>
+                </MenuItem>
+              </NextLink>
+              <NextLink href="/aboutme">
+                <MenuItem>
+                  <ChakraLink>
+                    <Text fontSize="md">
+                      <b>About Me</b>
+                    </Text>
+                  </ChakraLink>
+                </MenuItem>
+              </NextLink>
+            </MenuList>
+          </Menu>
+        )}
+        <DarkModeSwitch />
+      </Flex>
+    </Container>
+  );
+};

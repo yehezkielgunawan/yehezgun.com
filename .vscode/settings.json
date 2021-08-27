@@ -1,0 +1,10 @@
+{
+  "conventionalCommits.scopes": [
+    "home",
+    "projects",
+    "articles",
+    "aboutme",
+    "functions",
+    "constans"
+  ]
+}
