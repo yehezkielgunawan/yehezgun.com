@@ -1,32 +1,37 @@
-import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-} from "@chakra-ui/react";
-import { CheckCircleIcon } from "@chakra-ui/icons";
+import { Text, Box, HStack, Icon, Stack } from "@chakra-ui/react";
 
 import { Main } from "../components/wrapper/Main";
-import NextLink from "next/link";
+import { SiNextDotJs } from "react-icons/si";
+
+import { FaJs, FaNodeJs, FaReact } from "react-icons/fa";
 
 const Index = () => (
   <>
     <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{" "}
-        <Code>typescript</Code>.
+      <Text fontSize="2xl">
+        <b>Hi, I'm Yehezkiel Gunawan.</b>
       </Text>
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <NextLink href="/aboutme">
-            <ChakraLink> About ME</ChakraLink>
-          </NextLink>
-        </ListItem>
-      </List>
+      <Text fontSize="lg">A frontend engineer</Text>
+      <Text fontSize="lg">A learner, not talented</Text>
+
+      <Box pt={12}>
+        <Text>
+          <b>Current Favourite Tech Stacks</b>
+        </Text>
+        <HStack spacing="12px">
+          <Icon w={12} h={12} as={FaReact} />
+          <Icon w={12} h={12} as={FaJs} />
+          <Icon w={12} h={12} as={FaNodeJs} />
+          <Icon w={12} h={12} as={SiNextDotJs} />
+        </HStack>
+      </Box>
+
+      <Stack spacing={3} pt={12}>
+        <Text fontSize="lg">
+          <b>Newest Projects</b>
+        </Text>
+      </Stack>
     </Main>
   </>
 );
