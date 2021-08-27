@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 
-import { Container } from "./wrapper/Container";
 import NextLink from "next/link";
 import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
 import { HamburgerIcon } from "@chakra-ui/icons";
@@ -20,7 +19,7 @@ export const CTA = () => {
   const isDesktopWidth = useDesktopWidthCheck();
 
   return (
-    <Container
+    <Flex
       flexDirection="row"
       position="fixed"
       top="0"
@@ -28,6 +27,7 @@ export const CTA = () => {
       maxWidth="48rem"
       justifyContent="space-between"
       p={2}
+      pt={2}
     >
       <NextLink href="/">
         <ChakraLink>
@@ -37,7 +37,7 @@ export const CTA = () => {
         </ChakraLink>
       </NextLink>
 
-      <Flex gridGap={2} alignItems="center">
+      <Flex gridGap={3} alignItems="center">
         {isDesktopWidth ? (
           <>
             {menuList.map((menu, index) => (
@@ -75,6 +75,6 @@ export const CTA = () => {
         )}
         <DarkModeSwitch />
       </Flex>
-    </Container>
+    </Flex>
   );
 };

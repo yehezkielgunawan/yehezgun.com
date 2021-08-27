@@ -8,12 +8,10 @@ import {
 import { Main } from "../../components/wrapper/Main";
 import NextLink from "next/link";
 import { CheckCircleIcon } from "@chakra-ui/icons";
-import { Hero } from "../../components/Hero";
 
 function Projects() {
   return (
     <>
-      <Hero title="Projects" />
       <Main>
         <Text>Halaman Projects</Text>
 

@@ -4,16 +4,18 @@ import theme from "../theme";
 import { AppProps } from "next/app";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/wrapper/Container";
+import { FooterComponent } from "../components/FooterComponent";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider resetCSS theme={theme}>
-      <Container>
+    <Container>
+      <ChakraProvider resetCSS theme={theme}>
         <CTA />
-
         <Component {...pageProps} />
-      </Container>
-    </ChakraProvider>
+
+        <FooterComponent />
+      </ChakraProvider>
+    </Container>
   );
 }
 
