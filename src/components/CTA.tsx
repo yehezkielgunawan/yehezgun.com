@@ -49,31 +49,34 @@ export const CTA = () => {
                 </ChakraLink>
               </NextLink>
             ))}
+            <DarkModeSwitch />
           </>
         ) : (
-          <Menu>
-            <MenuButton
-              as={IconButton}
-              aria-label="Options"
-              icon={<HamburgerIcon />}
-              variant="outline"
-            />
-            <MenuList>
-              {menuList.map((menu, index) => (
-                <NextLink key={index} href={menu.route}>
-                  <MenuItem>
-                    <ChakraLink>
-                      <Text fontSize="md">
-                        <b>{menu.label}</b>
-                      </Text>
-                    </ChakraLink>
-                  </MenuItem>
-                </NextLink>
-              ))}
-            </MenuList>
-          </Menu>
+          <>
+            <DarkModeSwitch />
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                aria-label="Options"
+                icon={<HamburgerIcon />}
+                variant="outline"
+              />
+              <MenuList>
+                {menuList.map((menu, index) => (
+                  <NextLink key={index} href={menu.route}>
+                    <MenuItem>
+                      <ChakraLink>
+                        <Text fontSize="md">
+                          <b>{menu.label}</b>
+                        </Text>
+                      </ChakraLink>
+                    </MenuItem>
+                  </NextLink>
+                ))}
+              </MenuList>
+            </Menu>
+          </>
         )}
-        <DarkModeSwitch />
       </Flex>
     </Flex>
   );
