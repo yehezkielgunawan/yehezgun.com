@@ -16,15 +16,19 @@ import { Main } from "../components/wrapper/Main";
 import { SiNextDotJs } from "react-icons/si";
 
 import { FaJs, FaNodeJs, FaReact } from "react-icons/fa";
-import { NOTION_PROJECTS } from "../constants/config";
+import {
+  CHECK_YOUR_CONNECTION_MESSAGE,
+  NOTION_PROJECTS,
+} from "../constants/config";
 import { useEffect } from "react";
 import { useNotionAPI } from "../functions/swr/fetcher";
 import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useAppToast } from "../components/ui/AppToast";
+import { Projects } from "../functions/swr/types";
 
 const Index = () => {
-  const { data, isLoading, isError } = useNotionAPI(
+  const { data, isLoading, isError } = useNotionAPI<Projects>(
     `/table/${NOTION_PROJECTS}`
   );
   const dataProjects = data ?? [];
@@ -35,7 +39,7 @@ const Index = () => {
     if (isError && !isLoading) {
       toast({
         status: "warning",
-        description: "Gagal load data, cek koneksi internet anda!",
+        description: CHECK_YOUR_CONNECTION_MESSAGE,
       });
     }
   }, [isError]);

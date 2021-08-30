@@ -10,14 +10,17 @@ import {
 import { Main } from "../../components/wrapper/Main";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useNotionAPI } from "../../functions/swr/fetcher";
-import { DEFAULT_IMG, NOTION_PROJECTS } from "../../constants/config";
+import { CHECK_YOUR_CONNECTION_MESSAGE, DEFAULT_IMG, NOTION_PROJECTS } from "../../constants/config";
 import { useAppToast } from "../../components/ui/AppToast";
 import { useEffect } from "react";
+import { useDesktopWidthCheck } from "../../functions/helpers/desktopWidthCheck";
+import { Projects as ProjectListType } from "../../functions/swr/types";
 
 function Projects() {
-  const { data, isLoading, isError } = useNotionAPI(
+  const { data, isLoading, isError } = useNotionAPI<ProjectListType>(
     `/table/${NOTION_PROJECTS}`
   );
+  const isDesktopWidth = useDesktopWidthCheck();
   const toast = useAppToast();
   const dataProjects = data ?? [];
 
@@ -25,46 +28,42 @@ function Projects() {
     if (isError && !isLoading) {
       toast({
         status: "warning",
-        description: "Gagal load data, cek koneksi internet anda!",
+        description: CHECK_YOUR_CONNECTION_MESSAGE,
       });
     }
   }, [isError]);
 
-  useEffect(() => {
-    console.log(dataProjects[2]);
-  }, []);
-
   return (
     <Main spacing={4}>
       <Text fontSize="2xl">
-        <b>Projects </b>
+        <b>Projects</b>
       </Text>
 
       {dataProjects.map((project, index) => (
         <Skeleton key={index} isLoaded={!isLoading}>
           <ChakraLink isExternal href={project.project_url}>
-            <Box p={2} overflow="hidden" borderRadius={10} borderWidth={2}>
+            <Box p={4} overflow="hidden" borderRadius={10} borderWidth={2}>
               <Stack spacing={3} px={3}>
                 <Flex justifyContent="space-between">
                   <Text fontSize="lg">
                     <b>{project.project_title}</b>
                   </Text>
-                  <ExternalLinkIcon />
+                  <ExternalLinkIcon fontSize="lg" />
                 </Flex>
-                <Flex align="center" justifyContent="space-between">
+                <Flex gridGap={2} align="center" justifyContent="space-between">
                   <Text>{project.description}</Text>
                   {project.image_url ? (
                     <Image
                       src={project.image_url[1].url}
                       objectFit="contain"
-                      boxSize="150px"
+                      boxSize={isDesktopWidth ? "150px" : "100px"}
                       align="center"
                     />
                   ) : (
                     <Image
                       src={DEFAULT_IMG}
                       objectFit="contain"
-                      boxSize="150px"
+                      boxSize={isDesktopWidth ? "150px" : "100px"}
                       align="center"
                     />
                   )}

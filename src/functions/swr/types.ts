@@ -13,3 +13,13 @@ export type SingleProjectImage = {
 };
 
 export type Projects = Array<SingleProject>;
+
+export type SingleArticle = {
+  id: string;
+  title: string;
+  slug: string;
+  date: string;
+  article_image?: Array<SingleProjectImage>;
+};
+
+export type Articles = Array<SingleArticle>;
