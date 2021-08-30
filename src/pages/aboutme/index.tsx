@@ -1,30 +1,54 @@
 import {
+  Box,
   Link as ChakraLink,
-  List,
-  ListIcon,
-  ListItem,
+  Skeleton,
+  Stack,
   Text,
 } from "@chakra-ui/react";
 import { Main } from "../../components/wrapper/Main";
 import NextLink from "next/link";
-import { CheckCircleIcon } from "@chakra-ui/icons";
+import { useNotionAPI } from "../../functions/swr/fetcher";
+import { NOTION_PROJECTS } from "../../constants/config";
+import { useAppToast } from "../../components/ui/AppToast";
+import { useEffect } from "react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 function AboutMe() {
-  return (
-    <>
-      <Main>
-        <Text>Halaman About Me</Text>
+  const { data, isLoading, isError } = useNotionAPI(
+    `/table/${NOTION_PROJECTS}`
+  );
+  const toast = useAppToast();
+  const dataProjects = data ?? [];
 
-        <List spacing={3} my={0}>
-          <ListItem>
-            <ListIcon as={CheckCircleIcon} color="green.500" />
-            <NextLink href="/aboutme">
-              <ChakraLink> About ME</ChakraLink>
-            </NextLink>
-          </ListItem>
-        </List>
-      </Main>
-    </>
+  useEffect(() => {
+    if (isError && !isLoading) {
+      toast({
+        status: "warning",
+        description: "Gagal load data, cek koneksi internet anda!",
+      });
+    }
+  }, [isError]);
+
+  return (
+    <Main>
+      <Text fontSize="2xl">Halaman About Me</Text>
+
+      {dataProjects.map((project, index) => (
+        <Skeleton key={index} isLoaded={!isLoading}>
+          <ChakraLink isExternal href={project.project_url}>
+            <Box p={2} overflow="hidden" borderRadius={10} borderWidth={1}>
+              <Stack spacing={3} align="center">
+                <Text textAlign="center" fontSize="lg">
+                  <b>{project.project_title}</b>
+                  <ExternalLinkIcon pl={1} />
+                </Text>
+                <Text>{project.description}</Text>
+              </Stack>
+            </Box>
+          </ChakraLink>
+        </Skeleton>
+      ))}
+    </Main>
   );
 }
 

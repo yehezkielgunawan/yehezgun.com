@@ -24,22 +24,21 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useAppToast } from "../components/ui/AppToast";
 
 const Index = () => {
-  const isDesktopWidth = useDesktopWidthCheck();
-  const toast = useAppToast();
   const { data, isLoading, isError } = useNotionAPI(
     `/table/${NOTION_PROJECTS}`
   );
-
   const dataProjects = data ?? [];
+  const isDesktopWidth = useDesktopWidthCheck();
+  const toast = useAppToast();
 
   useEffect(() => {
     if (isError && !isLoading) {
       toast({
-        status:"warning",
-        description: "Gagal load data, cek koneksi internet anda!"
-      })
+        status: "warning",
+        description: "Gagal load data, cek koneksi internet anda!",
+      });
     }
-  }, [data]);
+  }, [isError]);
 
   return (
     <Main>
@@ -70,10 +69,9 @@ const Index = () => {
           {dataProjects.map((project, index) => {
             return (
               index < 2 && (
-                <Skeleton isLoaded={!isLoading}>
+                <Skeleton key={index} isLoaded={!isLoading}>
                   <ChakraLink isExternal href={project.project_url}>
                     <Box
-                      key={index}
                       p={2}
                       overflow="hidden"
                       borderRadius={10}
