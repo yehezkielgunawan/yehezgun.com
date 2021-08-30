@@ -4,6 +4,7 @@ import {
   Image,
   Link as ChakraLink,
   Skeleton,
+  Spinner,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -39,6 +40,8 @@ function Articles() {
     }
   }, [isError]);
 
+  if (!dataArticles || dataArticles.length < 1) return <Spinner />;
+
   return (
     <Main>
       <Text fontSize="2xl">
@@ -50,7 +53,7 @@ function Articles() {
         <Skeleton key={index} isLoaded={!isLoading}>
           {!article.external_url ? (
             <NextLink
-              href="/articles/post/[slug]"
+              href={`/articles/post/${article.slug}`}
               as={`/articles/post/${article.slug}`}
             >
               <ChakraLink>

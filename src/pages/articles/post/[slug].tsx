@@ -57,9 +57,8 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
       <Button
         as="a"
         href="../"
-        colorScheme="teal"
-        size="md"
-        w="25%"
+        colorScheme="gray"
+        w="30%"
         leftIcon={<ArrowLeftIcon />}
       >
         Kembali
