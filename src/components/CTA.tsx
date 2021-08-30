@@ -7,6 +7,8 @@ import {
   IconButton,
   MenuList,
   MenuItem,
+  useColorMode,
+  Box,
 } from "@chakra-ui/react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 
@@ -17,67 +19,75 @@ import { menuList } from "../constants/menuList";
 
 export const CTA = () => {
   const isDesktopWidth = useDesktopWidthCheck();
+  const { colorMode } = useColorMode();
 
   return (
-    <Flex
-      flexDirection="row"
+    <Box
+      justifyContent="start"
+      bg={colorMode === "light" ? "white" : "gray.700"}
       position="fixed"
-      top="0"
       width="100%"
-      maxWidth="48rem"
-      justifyContent="space-between"
-      p={2}
-      pt={2}
+      opacity="0.9"
+      top="0"
     >
-      <NextLink href="/">
-        <ChakraLink>
-          <Text fontSize="lg">
-            <b>yehezgun.com</b>
-          </Text>
-        </ChakraLink>
-      </NextLink>
+      <Flex
+        justifyContent="space-between"
+        p={2}
+        align="center"
+        px={4}
+        maxW="48rem"
+        mx="auto"
+      >
+        <NextLink href="/">
+          <ChakraLink>
+            <Text fontSize="lg">
+              <b>yehezgun.com</b>
+            </Text>
+          </ChakraLink>
+        </NextLink>
 
-      <Flex gridGap={3} alignItems="center">
-        {isDesktopWidth ? (
-          <>
-            {menuList.map((menu, index) => (
-              <NextLink key={index} href={menu.route}>
-                <ChakraLink>
-                  <Text fontSize="md">
-                    <b>{menu.label}</b>
-                  </Text>
-                </ChakraLink>
-              </NextLink>
-            ))}
-            <DarkModeSwitch />
-          </>
-        ) : (
-          <>
-            <DarkModeSwitch />
-            <Menu>
-              <MenuButton
-                as={IconButton}
-                aria-label="Options"
-                icon={<HamburgerIcon />}
-                variant="outline"
-              />
-              <MenuList>
-                {menuList.map((menu, index) => (
-                  <NextLink key={index} href={menu.route}>
-                    <MenuItem>
-                      <ChakraLink>
-                        <Text fontSize="md">
-                          <b>{menu.label}</b>
-                        </Text>
-                      </ChakraLink>
-                    </MenuItem>
-                  </NextLink>
-                ))}
-              </MenuList>
-            </Menu>
-          </>
-        )}
+        <Flex gridGap={3} alignItems="center">
+          {isDesktopWidth ? (
+            <>
+              {menuList.map((menu, index) => (
+                <NextLink key={index} href={menu.route}>
+                  <ChakraLink>
+                    <Text fontSize="md">
+                      <b>{menu.label}</b>
+                    </Text>
+                  </ChakraLink>
+                </NextLink>
+              ))}
+              <DarkModeSwitch />
+            </>
+          ) : (
+            <>
+              <DarkModeSwitch />
+              <Menu>
+                <MenuButton
+                  as={IconButton}
+                  aria-label="Options"
+                  icon={<HamburgerIcon />}
+                  variant="outline"
+                />
+                <MenuList>
+                  {menuList.map((menu, index) => (
+                    <NextLink key={index} href={menu.route}>
+                      <MenuItem>
+                        <ChakraLink>
+                          <Text fontSize="md">
+                            <b>{menu.label}</b>
+                          </Text>
+                        </ChakraLink>
+                      </MenuItem>
+                    </NextLink>
+                  ))}
+                </MenuList>
+              </Menu>
+            </>
+          )}
+        </Flex>
       </Flex>
-    </Flex>
+    </Box>
   );
 };
