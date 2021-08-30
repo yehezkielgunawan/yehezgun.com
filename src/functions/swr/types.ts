@@ -20,6 +20,7 @@ export type SingleArticle = {
   slug: string;
   date: string;
   article_image?: Array<SingleProjectImage>;
+  external_url?: string;
 };
 
 export type Articles = Array<SingleArticle>;
