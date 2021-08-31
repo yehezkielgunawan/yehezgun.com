@@ -21,7 +21,6 @@ import { useAppToast } from "../../components/ui/AppToast";
 import { Articles as ArticlesType } from "../../functions/swr/types";
 import { useEffect } from "react";
 import { formatDate } from "../../functions/helpers/formatDate";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 function Articles() {
   const { data, isLoading, isError } = useNotionAPI<ArticlesType>(
@@ -40,7 +39,12 @@ function Articles() {
     }
   }, [isError]);
 
-  if (!dataArticles || dataArticles.length < 1) return <Spinner />;
+  if (!dataArticles || dataArticles.length < 1)
+    return (
+      <Main justifyContent="center">
+        <Spinner textAlign="center"></Spinner>
+      </Main>
+    );
 
   return (
     <Main>
@@ -51,43 +55,13 @@ function Articles() {
 
       {dataArticles.map((article, index) => (
         <Skeleton key={index} isLoaded={!isLoading}>
-          {!article.external_url ? (
-            <NextLink
-              href={`/articles/post/${article.slug}`}
-              as={`/articles/post/${article.slug}`}
-            >
-              <ChakraLink>
-                <Box p={4} overflow="hidden" borderRadius={10} borderWidth={2}>
-                  <Flex gridGap={4} align="center">
-                    {article.article_image ? (
-                      <Image
-                        src={article.article_image[0].url}
-                        objectFit="contain"
-                        boxSize={isDesktopWidth ? "150px" : "100px"}
-                        align="center"
-                      />
-                    ) : (
-                      <Image
-                        src={DEFAULT_IMG_ARTICLE}
-                        objectFit="contain"
-                        boxSize={isDesktopWidth ? "150px" : "100px"}
-                        align="center"
-                      />
-                    )}
-                    <Stack spacing={2}>
-                      <Text fontSize="lg">
-                        <b>{article.title}</b>
-                      </Text>
-                      <Text>{formatDate(article.date)}</Text>
-                    </Stack>
-                  </Flex>
-                </Box>
-              </ChakraLink>
-            </NextLink>
-          ) : (
-            <ChakraLink isExternal href={article.external_url}>
+          <NextLink
+            href={`/articles/post/${article.slug}`}
+            as={`/articles/post/${article.slug}`}
+          >
+            <ChakraLink>
               <Box p={4} overflow="hidden" borderRadius={10} borderWidth={2}>
-                <Flex gridGap={isDesktopWidth ? 4 : 2} align="center">
+                <Flex gridGap={4} align="center">
                   {article.article_image ? (
                     <Image
                       src={article.article_image[0].url}
@@ -109,11 +83,10 @@ function Articles() {
                     </Text>
                     <Text>{formatDate(article.date)}</Text>
                   </Stack>
-                  <ExternalLinkIcon fontSize={isDesktopWidth ? "lg" : "md"} />
                 </Flex>
               </Box>
             </ChakraLink>
-          )}
+          </NextLink>
         </Skeleton>
       ))}
     </Main>

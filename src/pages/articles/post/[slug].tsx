@@ -1,6 +1,14 @@
-import { ArrowLeftIcon } from "@chakra-ui/icons";
-import { Button, Heading, Spinner } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import { ChevronLeftIcon } from "@chakra-ui/icons";
+import {
+  Heading,
+  Image,
+  Link as ChakraLink,
+  Spinner,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
+import React from "react";
 import { BlockMapType, NotionRenderer } from "react-notion";
 import { Main } from "../../../components/wrapper/Main";
 import { getAllPosts } from "../../../functions/swr/fetcher";
@@ -46,25 +54,33 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
   post,
   blocks,
 }) => {
-  useEffect(() => {
-    console.log(blocks);
-  }, [blocks]);
+  const { colorMode } = useColorMode();
 
   if (!post) return <Spinner />;
 
   return (
-    <Main spacing={4}>
-      <Button
-        as="a"
-        href="../"
-        colorScheme="gray"
-        w="30%"
-        leftIcon={<ArrowLeftIcon />}
-      >
-        Kembali
-      </Button>
-      <Heading as="h2">{post.title}</Heading>
-
+    <Main
+      spacing={4}
+      bg={colorMode === "light" ? "white" : "gray.300"}
+      textColor="black"
+    >
+      <NextLink href="../">
+        <ChakraLink>
+          <Text>
+            <ChevronLeftIcon /> Go Back
+          </Text>
+        </ChakraLink>
+      </NextLink>
+      <Heading as="h2" textAlign="center">
+        {post.title}
+      </Heading>
+      {post.article_image && (
+        <Image
+          src={post.article_image[0].url}
+          objectFit="contain"
+          align="center"
+        />
+      )}
       <NotionRenderer blockMap={blocks} />
     </Main>
   );

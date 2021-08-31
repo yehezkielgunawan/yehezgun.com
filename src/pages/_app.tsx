@@ -5,6 +5,7 @@ import { AppProps } from "next/app";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/wrapper/Container";
 import { FooterComponent } from "../components/FooterComponent";
+import "react-notion/src/styles.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -102,11 +102,9 @@ const Index = () => {
           })}
         </SimpleGrid>
 
-        <ChakraLink href="/projects">
-          <Button variant="outline" width="100%">
-            See More Projects
-          </Button>
-        </ChakraLink>
+        <Button as="a" href="/projects" variant="outline" width="100%">
+          See More Projects
+        </Button>
       </Stack>
     </Main>
   );
