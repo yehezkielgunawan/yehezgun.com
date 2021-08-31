@@ -16,6 +16,7 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   PopoverBody,
+  Flex,
 } from "@chakra-ui/react";
 
 import { Main } from "../components/wrapper/Main";
@@ -51,12 +52,27 @@ const Index = () => {
 
   return (
     <Main>
-      <Text fontSize="2xl">
-        <b>Hi, I'm Yehezkiel Gunawan.</b>
-      </Text>
+      <Flex justifyContent="space-between" align="center" gridGap={4}>
+        <Stack spacing={2}>
+          <Text fontSize="2xl">
+            <b>Hi, I'm Yehezkiel Gunawan.</b>
+          </Text>
 
-      <Text fontSize="lg">A frontend engineer</Text>
-      <Text fontSize="lg">A learner, not talented</Text>
+          <Text fontSize="md" textAlign="justify">
+            Currently work as a frontend developer.
+            <br />
+            You've found my personal slice of the internet. Take a look and
+            enjoy.
+          </Text>
+        </Stack>
+        {isDesktopWidth && (
+          <Image
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAGF-l78ZZR7LqHV1HwgAG8xhGoQt-CTeEVS0rmcG%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1"
+            boxSize="12rem"
+            objectFit="contain"
+          />
+        )}
+      </Flex>
 
       <Stack pt={12} spacing={2}>
         <Text>
@@ -67,9 +83,13 @@ const Index = () => {
             <Popover key={index} placement="top" trigger="hover">
               <PopoverTrigger>
                 <Box as="button">
-                  <Icon _hover={{
-                    color:"gray.500"
-                  }} as={techStack.icon} fontSize="4xl" />
+                  <Icon
+                    _hover={{
+                      color: "gray.500",
+                    }}
+                    as={techStack.icon}
+                    fontSize="4xl"
+                  />
                 </Box>
               </PopoverTrigger>
               <PopoverContent>
