@@ -10,12 +10,16 @@ import {
   Divider,
   Link as ChakraLink,
   Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverBody,
 } from "@chakra-ui/react";
 
 import { Main } from "../components/wrapper/Main";
-import { SiNextDotJs } from "react-icons/si";
 
-import { FaJs, FaNodeJs, FaReact } from "react-icons/fa";
 import {
   CHECK_YOUR_CONNECTION_MESSAGE,
   NOTION_PROJECTS,
@@ -26,6 +30,7 @@ import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useAppToast } from "../components/ui/AppToast";
 import { Projects } from "../functions/swr/types";
+import { techStackList } from "../constants/techStacks";
 
 const Index = () => {
   const { data, isLoading, isError } = useNotionAPI<Projects>(
@@ -53,17 +58,27 @@ const Index = () => {
       <Text fontSize="lg">A frontend engineer</Text>
       <Text fontSize="lg">A learner, not talented</Text>
 
-      <Box pt={12}>
+      <Stack pt={12} spacing={2}>
         <Text>
           <b>Current Favourite Tech Stacks</b>
         </Text>
-        <HStack spacing="12px">
-          <Icon w={12} h={12} as={FaReact} />
-          <Icon w={12} h={12} as={FaJs} />
-          <Icon w={12} h={12} as={FaNodeJs} />
-          <Icon w={12} h={12} as={SiNextDotJs} />
+        <HStack spacing={4}>
+          {techStackList.map((techStack, index) => (
+            <Popover key={index} placement="top" trigger="hover">
+              <PopoverTrigger>
+                <Box as="button">
+                  <Icon as={techStack.icon} fontSize="4xl" />
+                </Box>
+              </PopoverTrigger>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverBody>{techStack.description}</PopoverBody>
+              </PopoverContent>
+            </Popover>
+          ))}
         </HStack>
-      </Box>
+      </Stack>
 
       <Stack spacing={3} pt={12}>
         <Text fontSize="lg">

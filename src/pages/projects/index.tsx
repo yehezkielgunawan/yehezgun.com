@@ -10,7 +10,11 @@ import {
 import { Main } from "../../components/wrapper/Main";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useNotionAPI } from "../../functions/swr/fetcher";
-import { CHECK_YOUR_CONNECTION_MESSAGE, DEFAULT_IMG, NOTION_PROJECTS } from "../../constants/config";
+import {
+  CHECK_YOUR_CONNECTION_MESSAGE,
+  DEFAULT_IMG,
+  NOTION_PROJECTS,
+} from "../../constants/config";
 import { useAppToast } from "../../components/ui/AppToast";
 import { useEffect } from "react";
 import { useDesktopWidthCheck } from "../../functions/helpers/desktopWidthCheck";
@@ -51,7 +55,10 @@ function Projects() {
                   <ExternalLinkIcon fontSize="lg" />
                 </Flex>
                 <Flex gridGap={2} align="center" justifyContent="space-between">
-                  <Text>{project.description}</Text>
+                  <Stack spacing={3}>
+                    <Text>{project.description}</Text>
+                    <Text>LALALA</Text>
+                  </Stack>
                   {project.image_url ? (
                     <Image
                       src={project.image_url[1].url}
