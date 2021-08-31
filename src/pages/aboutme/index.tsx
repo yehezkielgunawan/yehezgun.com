@@ -37,7 +37,14 @@ function AboutMe() {
           <HStack spacing={3}>
             {contactList.map((contact, index) => (
               <ChakraLink isExternal href={contact.link_route}>
-                <Icon key={index} as={contact.icon} fontSize="4xl" />
+                <Icon
+                  _hover={{
+                    bgColor: "gray.500",
+                  }}
+                  key={index}
+                  as={contact.icon}
+                  fontSize="4xl"
+                />
               </ChakraLink>
             ))}
           </HStack>

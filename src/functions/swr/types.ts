@@ -2,7 +2,7 @@ export type SingleProject = {
   project_title: string;
   image_url?: Array<SingleProjectImage>;
   project_url: string;
-  made_using: Array<string>;
+  made_using: Array<SingleProjectImage>;
   description: string;
 };
 

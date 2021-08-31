@@ -1,6 +1,7 @@
 import {
   Box,
   Flex,
+  HStack,
   Image,
   Link as ChakraLink,
   Skeleton,
@@ -57,7 +58,18 @@ function Projects() {
                 <Flex gridGap={2} align="center" justifyContent="space-between">
                   <Stack spacing={3}>
                     <Text>{project.description}</Text>
-                    <Text>LALALA</Text>
+                    <HStack>
+                      {project.made_using.map((framework, index) => (
+                        <Image
+                          key={index}
+                          src={framework.url}
+                          bgColor="white"
+                          borderRadius={8}
+                          boxSize="40px"
+                          fit="contain"
+                        />
+                      ))}
+                    </HStack>
                   </Stack>
                   {project.image_url ? (
                     <Image

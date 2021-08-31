@@ -67,7 +67,9 @@ const Index = () => {
             <Popover key={index} placement="top" trigger="hover">
               <PopoverTrigger>
                 <Box as="button">
-                  <Icon as={techStack.icon} fontSize="4xl" />
+                  <Icon _hover={{
+                    color:"gray.500"
+                  }} as={techStack.icon} fontSize="4xl" />
                 </Box>
               </PopoverTrigger>
               <PopoverContent>
