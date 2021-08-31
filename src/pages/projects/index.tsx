@@ -47,7 +47,9 @@ function Projects() {
       {dataProjects.map((project, index) => (
         <Skeleton key={index} isLoaded={!isLoading}>
           <ChakraLink isExternal href={project.project_url}>
-            <Box p={4} overflow="hidden" borderRadius={10} borderWidth={2}>
+            <Box _hover={{
+              bg: "gray.500"
+            }} p={4} overflow="hidden" borderRadius={10} borderWidth={2}>
               <Stack spacing={3} px={3}>
                 <Flex justifyContent="space-between">
                   <Text fontSize="lg">

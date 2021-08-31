@@ -26,6 +26,7 @@ import {
   NOTION_PROJECTS,
 } from "../constants/config";
 import { useEffect } from "react";
+import NextLink from "next/link";
 import { useNotionAPI } from "../functions/swr/fetcher";
 import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
@@ -116,7 +117,10 @@ const Index = () => {
                       p={2}
                       overflow="hidden"
                       borderRadius={10}
-                      borderWidth={1}
+                      borderWidth={2}
+                      _hover={{
+                        bg: "gray.500",
+                      }}
                     >
                       <Stack spacing={3} align="center">
                         <Text textAlign="center" fontSize="lg">
@@ -139,9 +143,11 @@ const Index = () => {
           })}
         </SimpleGrid>
 
-        <Button as="a" href="/projects" variant="outline" width="100%">
-          See More Projects
-        </Button>
+        <NextLink href="/projects" passHref>
+          <Button as="a" variant="outline" width="100%">
+            See More Projects
+          </Button>
+        </NextLink>
       </Stack>
     </Main>
   );

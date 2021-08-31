@@ -1,5 +1,4 @@
 import {
-  Link as ChakraLink,
   Text,
   Flex,
   Menu,
@@ -38,24 +37,26 @@ export const CTA = () => {
         maxW="48rem"
         mx="auto"
       >
-        <NextLink href="/">
-          <ChakraLink>
-            <Text fontSize="lg">
-              <b>yehezgun.com</b>
-            </Text>
-          </ChakraLink>
+        <NextLink href="/" passHref>
+          <Text as="a" fontSize="lg">
+            <b>yehezgun.com</b>
+          </Text>
         </NextLink>
 
         <Flex gridGap={3} alignItems="center">
           {isDesktopWidth ? (
             <>
               {menuList.map((menu, index) => (
-                <NextLink key={index} href={menu.route}>
-                  <ChakraLink>
-                    <Text fontSize="md">
-                      <b>{menu.label}</b>
-                    </Text>
-                  </ChakraLink>
+                <NextLink key={index} href={menu.route} passHref>
+                  <Text
+                    as="a"
+                    fontSize="md"
+                    _hover={{
+                      color: "gray.500",
+                    }}
+                  >
+                    <b>{menu.label}</b>
+                  </Text>
                 </NextLink>
               ))}
               <DarkModeSwitch />
@@ -72,15 +73,18 @@ export const CTA = () => {
                 />
                 <MenuList>
                   {menuList.map((menu, index) => (
-                    <NextLink key={index} href={menu.route}>
-                      <MenuItem>
-                        <ChakraLink>
-                          <Text fontSize="md">
-                            <b>{menu.label}</b>
-                          </Text>
-                        </ChakraLink>
-                      </MenuItem>
-                    </NextLink>
+                    <MenuItem
+                      key={index}
+                      _hover={{
+                        color: "gray.500",
+                      }}
+                    >
+                      <NextLink href={menu.route} passHref>
+                        <Text as="a" fontSize="md">
+                          <b>{menu.label}</b>
+                        </Text>
+                      </NextLink>
+                    </MenuItem>
                   ))}
                 </MenuList>
               </Menu>

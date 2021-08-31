@@ -2,7 +2,6 @@ import { ChevronLeftIcon } from "@chakra-ui/icons";
 import {
   Heading,
   Image,
-  Link as ChakraLink,
   Spinner,
   Text,
   useColorMode,
@@ -58,12 +57,10 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
       bg={colorMode === "light" ? "white" : "gray.300"}
       textColor="black"
     >
-      <NextLink href="../">
-        <ChakraLink>
-          <Text>
-            <ChevronLeftIcon /> Go Back
-          </Text>
-        </ChakraLink>
+      <NextLink href="../" passHref>
+        <Text as="a">
+          <ChevronLeftIcon /> Go Back
+        </Text>
       </NextLink>
       <Heading as="h2" textAlign="center">
         {post.title}
