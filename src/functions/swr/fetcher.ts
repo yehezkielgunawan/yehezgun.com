@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { BlockMapType } from "react-notion";
 import useSWR from "swr";
 import { API_HOST, NOTION_BLOG_ID } from "../../constants/config";
 import { Articles } from "./types";
@@ -24,4 +25,10 @@ export const getAllPosts = async (): Promise<Articles> => {
   ).then((res) => {
     return res.json();
   });
+};
+
+export const getBlocks = async (postId: string): Promise<BlockMapType> => {
+  return await fetch(`https://notion-api.splitbee.io/v1/page/${postId}`).then(
+    (res) => res.json()
+  );
 };

@@ -29,19 +29,19 @@ function AboutMe() {
           )}
           <Text textAlign="justify">
             I’m Yehezkiel Gunawan, currently working as a Frontend Engineer.
-            Mostly, I use React and Typescript. I make fun projects or write
-            some articles in my free time and publish it here.
+            Currently, I like to crafting some web apps with React and
+            Typescript. I make fun projects or write some articles in my free
+            time and publish it here.
             <br /> <br />I like to explore some new tech stuff, playing games
             sometimes, and watching animes.
           </Text>
           <HStack spacing={3}>
             {contactList.map((contact, index) => (
-              <ChakraLink isExternal href={contact.link_route}>
+              <ChakraLink key={index} isExternal href={contact.link_route}>
                 <Icon
                   _hover={{
                     bgColor: "gray.500",
                   }}
-                  key={index}
                   as={contact.icon}
                   fontSize="4xl"
                 />
