@@ -56,14 +56,14 @@ function Projects() {
                     <Image
                       src={project.image_url[1].url}
                       objectFit="contain"
-                      boxSize={isDesktopWidth ? "150px" : "100px"}
+                      boxSize={isDesktopWidth ? "120px" : "100px"}
                       align="center"
                     />
                   ) : (
                     <Image
                       src={DEFAULT_IMG}
                       objectFit="contain"
-                      boxSize={isDesktopWidth ? "150px" : "100px"}
+                      boxSize={isDesktopWidth ? "120px" : "100px"}
                       align="center"
                     />
                   )}

@@ -5,7 +5,7 @@ export const DarkModeSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex gridGap={2} pl={2} pt={1}>
+    <Flex gridGap={2} pl={2}>
       {colorMode === "dark" ? (
         <IconButton
           aria-label="Sun"
