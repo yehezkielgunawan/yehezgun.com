@@ -20,21 +20,14 @@ export default class MyDocument extends NextDocument {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          <meta
-            property="og:image"
-            content="/yehez-profile.svg"
-          />
-          <meta name="application-name" content={APP_NAME} />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="default"
-          />
-          <meta name="apple-mobile-web-app-title" content={APP_NAME} />
-          <meta name="description" content={APP_DESC} />
-          <meta name="format-detection" content="telephone=no" />
-          <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="theme-color" content="#FFFFFF" />
+          <meta property="og:title" content={APP_NAME} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://yehezgun.com" />
+          <meta property="og:image" content="/yehez-profile.svg" />
+          <meta property="og:description" content={APP_DESC} />
+          <meta name="theme-color" content="#FF0000" />
+
+          <meta name="twitter:card" content="summary_large_image" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
