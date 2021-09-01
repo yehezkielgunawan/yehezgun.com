@@ -21,35 +21,40 @@ import {
 
 import { Main } from "../components/wrapper/Main";
 
-import {
-  CHECK_YOUR_CONNECTION_MESSAGE,
-  NOTION_PROJECTS,
-} from "../constants/config";
+import { CHECK_YOUR_CONNECTION_MESSAGE } from "../constants/config";
 import { useEffect } from "react";
 import NextLink from "next/link";
-import { useNotionAPI } from "../functions/lib/fetcher";
+import { getAllProjects } from "../functions/lib/fetcher";
 import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { useAppToast } from "../components/ui/AppToast";
 import { Projects } from "../functions/lib/types";
 import { techStackList } from "../constants/techStacks";
+import { useAppToast } from "../components/ui/AppToast";
 
-const Index = () => {
-  const { data, isLoading, isError } = useNotionAPI<Projects>(
-    `/table/${NOTION_PROJECTS}`,
-  );
-  const dataProjects = data ?? [];
+export async function getStaticProps() {
+  const projectList = await getAllProjects();
+
+  return {
+    props: {
+      projectList,
+    },
+    revalidate: 10,
+  };
+}
+
+const Index = ({ projectList }: { projectList: Projects }) => {
+  const dataProjects = projectList ?? [];
   const isDesktopWidth = useDesktopWidthCheck();
   const toast = useAppToast();
 
   useEffect(() => {
-    if (isError && !isLoading) {
+    if (!dataProjects) {
       toast({
         status: "warning",
         description: CHECK_YOUR_CONNECTION_MESSAGE,
       });
     }
-  }, [isError]);
+  }, [dataProjects]);
 
   return (
     <Main>
@@ -116,7 +121,7 @@ const Index = () => {
           {dataProjects.map((project, index) => {
             return (
               index < 2 && (
-                <Skeleton key={index} isLoaded={!isLoading}>
+                <Skeleton key={index} isLoaded={dataProjects ? true : false}>
                   <ChakraLink isExternal href={project.project_url}>
                     <Box
                       p={2}
