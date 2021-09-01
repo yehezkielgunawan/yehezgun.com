@@ -36,7 +36,7 @@ import { techStackList } from "../constants/techStacks";
 
 const Index = () => {
   const { data, isLoading, isError } = useNotionAPI<Projects>(
-    `/table/${NOTION_PROJECTS}`
+    `/table/${NOTION_PROJECTS}`,
   );
   const dataProjects = data ?? [];
   const isDesktopWidth = useDesktopWidthCheck();
@@ -107,7 +107,7 @@ const Index = () => {
         <Text fontSize="lg">
           <b>Newest Projects</b>
         </Text>
-        <SimpleGrid columns={isDesktopWidth ? 2 : 1} spacing={4}>
+        <SimpleGrid columns={isDesktopWidth ? 2 : 1} spacing={3}>
           {dataProjects.map((project, index) => {
             return (
               index < 2 && (

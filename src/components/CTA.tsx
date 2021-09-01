@@ -73,18 +73,17 @@ export const CTA = () => {
                 />
                 <MenuList>
                   {menuList.map((menu, index) => (
-                    <MenuItem
-                      key={index}
-                      _hover={{
-                        color: "gray.500",
-                      }}
-                    >
-                      <NextLink href={menu.route} passHref>
+                    <NextLink key={index} href={menu.route} passHref>
+                      <MenuItem
+                        _hover={{
+                          color: "gray.500",
+                        }}
+                      >
                         <Text as="a" fontSize="md">
                           <b>{menu.label}</b>
                         </Text>
-                      </NextLink>
-                    </MenuItem>
+                      </MenuItem>
+                    </NextLink>
                   ))}
                 </MenuList>
               </Menu>

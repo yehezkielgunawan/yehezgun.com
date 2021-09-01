@@ -1,7 +1,7 @@
 import { useMediaQuery } from "@chakra-ui/react";
 
 export const useDesktopWidthCheck = () => {
-  const [isDesktopWidth] = useMediaQuery("(min-width: 48em)");
+  const [isDesktopWidth] = useMediaQuery("(min-width: 480px)");
 
   return isDesktopWidth;
 };
