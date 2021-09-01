@@ -33,17 +33,18 @@ import { useAppToast } from "../components/ui/AppToast";
 
 export async function getStaticProps() {
   const projectList = await getAllProjects();
+  const newestProjects = projectList.slice(0, 2);
 
   return {
     props: {
-      projectList,
+      newestProjects,
     },
     revalidate: 10,
   };
 }
 
-const Index = ({ projectList }: { projectList: Projects }) => {
-  const dataProjects = projectList ?? [];
+const Index = ({ newestProjects }: { newestProjects: Projects }) => {
+  const dataProjects = newestProjects ?? [];
   const isDesktopWidth = useDesktopWidthCheck();
   const toast = useAppToast();
 
@@ -73,7 +74,7 @@ const Index = ({ projectList }: { projectList: Projects }) => {
         </Stack>
         {isDesktopWidth && (
           <Image
-            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAGF-l78ZZR7LqHV1HwgAG8xhGoQt-CTeEVS0rmcG%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1"
+            src="https://yt3.ggpht.com/a/AGF-l78ZZR7LqHV1HwgAG8xhGoQt-CTeEVS0rmcG=s900-c-k-c0xffffffff-no-rj-mo"
             boxSize="12rem"
             objectFit="contain"
           />
@@ -120,35 +121,33 @@ const Index = ({ projectList }: { projectList: Projects }) => {
         >
           {dataProjects.map((project, index) => {
             return (
-              index < 2 && (
-                <Skeleton key={index} isLoaded={dataProjects ? true : false}>
-                  <ChakraLink isExternal href={project.project_url}>
-                    <Box
-                      p={2}
-                      overflow="hidden"
-                      borderRadius={10}
-                      borderWidth={2}
-                      _hover={{
-                        bg: "gray.500",
-                      }}
-                    >
-                      <Stack spacing={3} align="center">
-                        <Text textAlign="center" fontSize="lg">
-                          <b>{project.project_title}</b>
-                          <ExternalLinkIcon pl={1} />
-                        </Text>
-                        <Divider></Divider>
-                        <Image
-                          src={project.image_url[0].url}
-                          objectFit="contain"
-                          boxSize="150px"
-                          align="center"
-                        />
-                      </Stack>
-                    </Box>
-                  </ChakraLink>
-                </Skeleton>
-              )
+              <Skeleton key={index} isLoaded={dataProjects ? true : false}>
+                <ChakraLink isExternal href={project.project_url}>
+                  <Box
+                    p={2}
+                    overflow="hidden"
+                    borderRadius={10}
+                    borderWidth={2}
+                    _hover={{
+                      bg: "gray.500",
+                    }}
+                  >
+                    <Stack spacing={3} align="center">
+                      <Text textAlign="center" fontSize="lg">
+                        <b>{project.project_title}</b>
+                        <ExternalLinkIcon pl={1} />
+                      </Text>
+                      <Divider></Divider>
+                      <Image
+                        src={project.image_url[0].url}
+                        objectFit="contain"
+                        boxSize="150px"
+                        align="center"
+                      />
+                    </Stack>
+                  </Box>
+                </ChakraLink>
+              </Skeleton>
             );
           })}
         </SimpleGrid>
