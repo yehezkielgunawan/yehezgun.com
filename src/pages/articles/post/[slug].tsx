@@ -10,8 +10,8 @@ import NextLink from "next/link";
 import React from "react";
 import { BlockMapType, NotionRenderer } from "react-notion";
 import { Main } from "../../../components/wrapper/Main";
-import { getAllPosts, getBlocks } from "../../../functions/swr/fetcher";
-import { SingleArticle } from "../../../functions/swr/types";
+import { getAllPosts, getBlocks } from "../../../functions/lib/fetcher";
+import { SingleArticle } from "../../../functions/lib/types";
 
 export async function getStaticProps({
   params: { slug },

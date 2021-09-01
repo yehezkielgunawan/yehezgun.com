@@ -10,7 +10,7 @@ export default class Document extends NextDocument {
       <Html>
         <Head>
           <link rel="icon" href="/assets/YG.png" type="image/x-icon"></link>
-          <title>Yehezgun</title>
+          <title>YehezGun</title>
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"

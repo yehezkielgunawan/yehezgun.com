@@ -9,7 +9,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Main } from '../../components/wrapper/Main';
-import { useNotionAPI } from '../../functions/swr/fetcher';
+import { useNotionAPI } from '../../functions/lib/fetcher';
 import {
   CHECK_YOUR_CONNECTION_MESSAGE,
   DEFAULT_IMG_ARTICLE,
@@ -18,7 +18,7 @@ import {
 import NextLink from 'next/link';
 import { useDesktopWidthCheck } from '../../functions/helpers/desktopWidthCheck';
 import { useAppToast } from '../../components/ui/AppToast';
-import { Articles as ArticlesType } from '../../functions/swr/types';
+import { Articles as ArticlesType } from '../../functions/lib/types';
 import { useEffect } from 'react';
 import { formatDate } from '../../functions/helpers/formatDate';
 

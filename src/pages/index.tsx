@@ -27,11 +27,11 @@ import {
 } from "../constants/config";
 import { useEffect } from "react";
 import NextLink from "next/link";
-import { useNotionAPI } from "../functions/swr/fetcher";
+import { useNotionAPI } from "../functions/lib/fetcher";
 import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useAppToast } from "../components/ui/AppToast";
-import { Projects } from "../functions/swr/types";
+import { Projects } from "../functions/lib/types";
 import { techStackList } from "../constants/techStacks";
 
 const Index = () => {

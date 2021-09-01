@@ -26,7 +26,7 @@ export const CTA = () => {
       bg={colorMode === "light" ? "white" : "gray.700"}
       position="fixed"
       width="100%"
-      opacity="0.9"
+      opacity="0.95"
       top="0"
     >
       <Flex

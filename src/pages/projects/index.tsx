@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Main } from "../../components/wrapper/Main";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { useNotionAPI } from "../../functions/swr/fetcher";
+import { useNotionAPI } from "../../functions/lib/fetcher";
 import {
   CHECK_YOUR_CONNECTION_MESSAGE,
   DEFAULT_IMG,
@@ -19,7 +19,7 @@ import {
 import { useAppToast } from "../../components/ui/AppToast";
 import { useEffect } from "react";
 import { useDesktopWidthCheck } from "../../functions/helpers/desktopWidthCheck";
-import { Projects as ProjectListType } from "../../functions/swr/types";
+import { Projects as ProjectListType } from "../../functions/lib/types";
 
 function Projects() {
   const { data, isLoading, isError } = useNotionAPI<ProjectListType>(
