@@ -23,11 +23,18 @@ export default class MyDocument extends NextDocument {
           <meta property="og:title" content={APP_NAME} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://yehezgun.com" />
-          <meta property="og:image" content="/yehez-profile.svg" />
+          <meta property="og:image" content="/assets/yehez-profile.png" />
           <meta property="og:description" content={APP_DESC} />
           <meta name="theme-color" content="#FF0000" />
 
           <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="YehezGun | Frontend Engineer" />
+          <meta
+            name="twitter:description"
+            content="Welcome to Yehezkiel Gunawan's profile website"
+          />
+          <meta name="twitter:image" content="/assets/yehez-profile.png" />
+
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>

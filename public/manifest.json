@@ -7,9 +7,9 @@
   "description": "Yehezkiel Gunawan's personal site.",
   "icons": [
     {
-      "src": "/yehez-profile.svg",
-      "sizes": "64x64",
-      "type": "image/png"
+      "src": "/assets/yehez-profile.png",
+      "purpose": "maskable any",
+      "sizes": "48x48 72x72 96x96 128x128 256x256"
     }
   ]
 }
