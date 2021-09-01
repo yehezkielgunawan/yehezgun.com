@@ -62,9 +62,10 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
         <link rel="icon" href="/assets/YG.png"></link>
         <title>YehezGun | Articles</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="image" content="/assets/yehez-profile.png" />
         <meta name="description" content="Article List" />
 
-        <meta property="og:url" content="https://yehezgun.com" />
+        <meta property="og:url" content="https://yehezgun.com/articles" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="YehezGun | Articles" />
         <meta property="og:description" content="Just random thoughts." />

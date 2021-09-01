@@ -63,7 +63,10 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
           <meta property="image" content="/assets/yehez-profile.png" />
         )}
 
-        <meta property="og:url" content="https://yehezgun.com" />
+        <meta
+          property="og:url"
+          content={`https://yehezgun.com/articles/post/${post.slug}`}
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="YehezGun | Post" />
         <meta property="og:description" content={post.title} />
