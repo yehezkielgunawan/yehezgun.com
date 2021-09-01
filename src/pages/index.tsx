@@ -107,7 +107,12 @@ const Index = () => {
         <Text fontSize="lg">
           <b>Newest Projects</b>
         </Text>
-        <SimpleGrid columns={isDesktopWidth ? 2 : 1} spacing={3}>
+        <SimpleGrid
+          spacing={3}
+          columns={isDesktopWidth ? 2 : 1}
+          alignItems="center"
+          justifyContent="center"
+        >
           {dataProjects.map((project, index) => {
             return (
               index < 2 && (
