@@ -57,7 +57,11 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
         <title>YehezGun | Post</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={post.title} />
-        <meta property="image" content={post.article_image[0].url} />
+        {post.article_image ? (
+          <meta property="image" content={post.article_image[0].url} />
+        ) : (
+          <meta property="image" content="/assets/yehez-profile.png" />
+        )}
       </Head>
       <NextLink href="../" passHref>
         <Text as="a">
