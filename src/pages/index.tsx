@@ -65,9 +65,30 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
       <Head>
         <link rel="icon" href="/assets/YG.png"></link>
         <title>YehezGun | Home</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Welcome to my personal site." />
-        <meta name="image" content="/assets/yehez-profile.png" />
+
+        <meta property="og:url" content="https://yehezgun.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="YehezGun | Home" />
+        <meta
+          property="og:description"
+          content="Welcome to my personal site."
+        />
+        <meta
+          property="og:image"
+          content="https://yehezgun.com//assets/yehez-profile.png"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="YehezGun | Home" />
+        <meta
+          name="twitter:description"
+          content="Welcome to my personal site."
+        />
+        <meta
+          name="twitter:image"
+          content="https://yehezgun.com//assets/yehez-profile.png"
+        />
       </Head>
       <Flex justifyContent="space-between" align="center" gridGap={4}>
         <Stack spacing={2}>

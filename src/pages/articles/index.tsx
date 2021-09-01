@@ -63,13 +63,29 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
         <title>YehezGun | Articles</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Article List" />
-        <meta name="image" content="/assets/yehez-profile.png" />
+
+        <meta property="og:url" content="https://yehezgun.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="YehezGun | Articles" />
+        <meta property="og:description" content="Just random thoughts." />
+        <meta
+          property="og:image"
+          content="https://yehezgun.com//assets/yehez-profile.png"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="YehezGun | Articles" />
+        <meta name="twitter:description" content="Just random thoughts." />
+        <meta
+          name="twitter:image"
+          content="https://yehezgun.com//assets/yehez-profile.png"
+        />
       </Head>
       <Text fontSize="2xl">
         <b>Articles</b>
       </Text>
       <Text fontSize="lg">
-        Just some random thoughs. (The articles written in Bahasa)
+        Just some random thoughts. (The articles written in Bahasa)
       </Text>
 
       {dataArticles.map((article, index) => (

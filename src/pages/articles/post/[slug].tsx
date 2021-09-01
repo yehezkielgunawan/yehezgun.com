@@ -62,6 +62,27 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
         ) : (
           <meta property="image" content="/assets/yehez-profile.png" />
         )}
+
+        <meta property="og:url" content="https://yehezgun.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="YehezGun | Post" />
+        <meta property="og:description" content={post.title} />
+        {post.article_image ? (
+          <meta property="og:image" content={post.article_image[0].url} />
+        ) : (
+          <meta
+            property="og:image"
+            content="https://yehezgun.com//assets/yehez-profile.png"
+          />
+        )}
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="YehezGun | Post" />
+        <meta name="twitter:description" content={post.title} />
+        <meta
+          name="twitter:image"
+          content="https://yehezgun.com//assets/yehez-profile.png"
+        />
       </Head>
       <NextLink href="../" passHref>
         <Text as="a">
