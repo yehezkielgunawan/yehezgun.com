@@ -1,16 +1,21 @@
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import { ColorModeScript } from "@chakra-ui/react";
 
-const APP_NAME = "YehezGun";
+const APP_NAME = "YehezGun | Frontend Engineer";
 const APP_DESC = "Welcome to Yehezkiel Gunawan's profile website";
 
-export default class Document extends NextDocument {
+export default class MyDocument extends NextDocument {
+  static async getInitialProps(ctx) {
+    const initialProps = await NextDocument.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
   render() {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="/assets/YG.png" type="image/x-icon"></link>
-          <title>YehezGun</title>
+          <link rel="icon" href="/assets/YG.png"></link>
+          <title>{APP_NAME}</title>
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
