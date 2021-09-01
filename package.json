@@ -1,5 +1,7 @@
 {
   "private": true,
+  "description": "Yehezkiel Gunawan's personal site",
+  "author": "yehezgun",
   "scripts": {
     "dev": "next",
     "build": "next build",

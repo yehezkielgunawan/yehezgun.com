@@ -31,6 +31,7 @@ export default class MyDocument extends NextDocument {
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#FFFFFF" />
+          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}
