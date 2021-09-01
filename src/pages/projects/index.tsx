@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import { Main } from "../../components/wrapper/Main";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { getAllProjects } from "../../functions/lib/fetcher";
@@ -47,6 +48,14 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
 
   return (
     <Main spacing={4}>
+      <Head>
+        <link rel="icon" href="/assets/YG.png"></link>
+        <title>YehezGun | Projects</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Project List" />
+        <meta name="image" content="/assets/yehez-profile.png" />
+      </Head>
+
       <Text fontSize="2xl">
         <b>Projects</b>
       </Text>

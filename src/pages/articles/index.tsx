@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import { Main } from "../../components/wrapper/Main";
 import { getAllPosts } from "../../functions/lib/fetcher";
 import {
@@ -57,6 +58,13 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
 
   return (
     <Main>
+      <Head>
+        <link rel="icon" href="/assets/YG.png"></link>
+        <title>YehezGun | Articles</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Article List" />
+        <meta name="image" content="/assets/yehez-profile.png" />
+      </Head>
       <Text fontSize="2xl">
         <b>Articles</b>
       </Text>

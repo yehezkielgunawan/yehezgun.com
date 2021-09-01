@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import { Main } from "../../components/wrapper/Main";
 import { contactList } from "../../constants/contactList";
 import { useDesktopWidthCheck } from "../../functions/helpers/desktopWidthCheck";
@@ -17,6 +18,13 @@ function AboutMe() {
 
   return (
     <Main>
+      <Head>
+        <link rel="icon" href="/assets/YG.png"></link>
+        <title>YehezGun | About Me</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="A little description about me" />
+        <meta name="image" content="/assets/yehez-profile.png" />
+      </Head>
       <Flex
         justifyContent="space-between"
         gridGap={isDesktopWidth ? 8 : 4}

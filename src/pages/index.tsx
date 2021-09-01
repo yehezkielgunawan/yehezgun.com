@@ -4,7 +4,6 @@ import {
   HStack,
   Icon,
   Stack,
-  SimpleGrid,
   Image,
   Skeleton,
   Divider,
@@ -17,7 +16,11 @@ import {
   PopoverCloseButton,
   PopoverBody,
   Flex,
+  Img,
+  SimpleGrid,
 } from "@chakra-ui/react";
+
+import Head from "next/head";
 
 import { Main } from "../components/wrapper/Main";
 
@@ -59,6 +62,13 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
 
   return (
     <Main>
+      <Head>
+        <link rel="icon" href="/assets/YG.png"></link>
+        <title>YehezGun | Home</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Welcome to my personal site." />
+        <meta name="image" content="/assets/yehez-profile.png" />
+      </Head>
       <Flex justifyContent="space-between" align="center" gridGap={4}>
         <Stack spacing={2}>
           <Text fontSize="2xl">
@@ -113,18 +123,13 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         <Text fontSize="lg">
           <b>Newest Projects</b>
         </Text>
-        <SimpleGrid
-          spacing={3}
-          columns={isDesktopWidth ? 2 : 1}
-          alignItems="center"
-          justifyContent="center"
-        >
+        <SimpleGrid columns={[1, null, 2]} spacing={3}>
           {dataProjects.map((project, index) => {
             return (
               <Skeleton key={index} isLoaded={dataProjects ? true : false}>
                 <ChakraLink isExternal href={project.project_url}>
                   <Box
-                    p={2}
+                    p={1}
                     overflow="hidden"
                     borderRadius={10}
                     borderWidth={2}
@@ -138,10 +143,11 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
                         <ExternalLinkIcon pl={1} />
                       </Text>
                       <Divider></Divider>
-                      <Image
+                      <Img
                         src={project.image_url[0].url}
                         objectFit="contain"
-                        boxSize="150px"
+                        w="100%"
+                        h="150px"
                         align="center"
                       />
                     </Stack>
@@ -153,7 +159,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         </SimpleGrid>
 
         <NextLink href="/projects" passHref>
-          <Button as="a" variant="outline" width="100%">
+          <Button as="a" variant="outline" width="">
             See More Projects
           </Button>
         </NextLink>
