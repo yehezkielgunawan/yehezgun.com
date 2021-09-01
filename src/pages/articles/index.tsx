@@ -60,7 +60,9 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
       <Text fontSize="2xl">
         <b>Articles</b>
       </Text>
-      <Text fontSize="lg">Just some random thoughs.</Text>
+      <Text fontSize="lg">
+        Just some random thoughs. (The articles written in Bahasa)
+      </Text>
 
       {dataArticles.map((article, index) => (
         <Skeleton key={index} isLoaded={dataArticles ? true : false}>

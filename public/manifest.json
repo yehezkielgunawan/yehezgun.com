@@ -1,19 +1,15 @@
 {
-    "short_name": "yehez",
-    "name": "yehezgun.com",
-    "lang": "en",
-    "start_url": "/",
-    "background_color": "#444444",
-    "theme_color": "#444444",
-    "dir": "ltr",
-    "display": "standalone",
-    "orientation": "portrait",
-    "prefer_related_applications": false,
-    "icons": [
-      {
-        "src": "/assets/YG.png",
-        "purpose": "maskable any",
-        "sizes": "48x48 72x72 96x96 128x128 256x256"
-      }
-    ]
-  }
+  "name": "yehezgun.com",
+  "short_name": "yehezgun",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Yehezkiel Gunawan's personal site.",
+  "icons": [
+    {
+      "src": "/yehez-profile.svg",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}

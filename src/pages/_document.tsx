@@ -20,6 +20,10 @@ export default class MyDocument extends NextDocument {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+          <meta
+            property="og:image"
+            content="/yehez-profile.svg"
+          />
           <meta name="application-name" content={APP_NAME} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
