@@ -34,7 +34,7 @@ function AboutMe() {
             <Image src="/assets/yehez-profile.png" objectFit="contain" />
           )}
           <Text textAlign="justify">
-            I’m Yehezkiel Gunawan, currently working as a Frontend Engineer.
+            I’m Yehezkiel Gunawan. You can call me Yehez. Currently working as a Frontend Engineer.
             Currently, I like to crafting some web apps with React and
             Typescript. I make fun projects or write some articles in my free
             time and publish it here.
@@ -59,7 +59,8 @@ function AboutMe() {
           <Image
             src="/assets/yehez-profile.png"
             objectFit="contain"
-            boxSize="200px"
+            w="40%"
+            borderRadius={4}
           />
         )}
       </Flex>
