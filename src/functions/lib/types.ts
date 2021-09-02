@@ -24,3 +24,11 @@ export type SingleArticle = {
 };
 
 export type Articles = Array<SingleArticle>;
+
+export type SingleExperience = {
+  role_name: string;
+  company_name: string;
+  duration: string;
+};
+
+export type Experiences = Array<SingleExperience>;
