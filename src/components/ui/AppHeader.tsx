@@ -17,7 +17,7 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
       <meta property="og:title" content={`YehezGun | ${pageTitle}`} />
       <meta
         property="og:image"
-        content="https://yehezgun.com//assets/yehez-profile.webp"
+        content="https://yehezgun.com//assets/yehez-profile.png"
       />
       <meta property="og:description" content={pageDesc} />
 
@@ -26,7 +26,7 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
       <meta name="twitter:description" content={pageDesc} />
       <meta
         name="twitter:image"
-        content="https://yehezgun.com//assets/yehez-profile.webp"
+        content="https://yehezgun.com//assets/yehez-profile.png"
       />
     </Head>
   );

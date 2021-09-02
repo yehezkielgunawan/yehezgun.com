@@ -69,7 +69,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
         ) : (
           <meta
             property="og:image"
-            content="https://yehezgun.com//assets/yehez-profile.webp"
+            content="https://yehezgun.com//assets/yehez-profile.png"
           />
         )}
 
@@ -78,7 +78,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
         <meta name="twitter:description" content={post.title} />
         <meta
           name="twitter:image"
-          content="https://yehezgun.com//assets/yehez-profile.webp"
+          content="https://yehezgun.com//assets/yehez-profile.png"
         />
       </Head>
       <NextLink href="../" passHref>
