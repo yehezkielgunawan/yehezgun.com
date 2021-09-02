@@ -51,12 +51,6 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
       <Head>
         <link rel="icon" href="/assets/YG.png"></link>
         <title>YehezGun | Projects</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta
-          name="image"
-          content="https://yehezgun.com//assets/yehez-profile.png"
-        />
-        <meta name="description" content="Project List" />
 
         <meta property="og:url" content="https://yehezgun.com/projects" />
         <meta property="og:type" content="website" />

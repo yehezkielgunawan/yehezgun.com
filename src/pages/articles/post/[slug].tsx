@@ -56,15 +56,6 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
         <link rel="icon" href="/assets/YG.png"></link>
         <title>YehezGun | {post.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={post.title} />
-        {post.article_image?.length > 0 ? (
-          <meta property="image" content={post.article_image[0].url} />
-        ) : (
-          <meta
-            property="image"
-            content="https://yehezgun.com//assets/yehez-profile.png"
-          />
-        )}
 
         <meta
           property="og:url"
