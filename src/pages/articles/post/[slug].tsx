@@ -54,13 +54,16 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
     >
       <Head>
         <link rel="icon" href="/assets/YG.png"></link>
-        <title>YehezGun | Post</title>
+        <title>YehezGun | {post.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={post.title} />
-        {post.article_image ? (
+        {post.article_image?.length > 0 ? (
           <meta property="image" content={post.article_image[0].url} />
         ) : (
-          <meta property="image" content="/assets/yehez-profile.png" />
+          <meta
+            property="image"
+            content="https://yehezgun.com//assets/yehez-profile.png"
+          />
         )}
 
         <meta
@@ -68,9 +71,9 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
           content={`https://yehezgun.com/articles/post/${post.slug}`}
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="YehezGun | Post" />
+        <meta property="og:title" content={`YehezGun | ${post.title}`} />
         <meta property="og:description" content={post.title} />
-        {post.article_image ? (
+        {post.article_image?.length > 0 ? (
           <meta property="og:image" content={post.article_image[0].url} />
         ) : (
           <meta
@@ -88,7 +91,13 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
         />
       </Head>
       <NextLink href="../" passHref>
-        <Text as="a">
+        <Text
+          as="a"
+          _hover={{
+            color: "gray.500",
+          }}
+          w="25%"
+        >
           <ChevronLeftIcon /> Go Back
         </Text>
       </NextLink>

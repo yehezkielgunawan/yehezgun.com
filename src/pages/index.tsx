@@ -65,19 +65,22 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
       <Head>
         <link rel="icon" href="/assets/YG.png"></link>
         <title>YehezGun | Home</title>
-        <meta name="image" content="/assets/yehez-profile.png" />
+        <meta
+          name="image"
+          content="https://yehezgun.com//assets/yehez-profile.png"
+        />
         <meta name="description" content="Welcome to my personal site." />
 
         <meta property="og:url" content="https://yehezgun.com" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="YehezGun | Home" />
         <meta
-          property="og:description"
-          content="Welcome to my personal site."
-        />
-        <meta
           property="og:image"
           content="https://yehezgun.com//assets/yehez-profile.png"
+        />
+        <meta
+          property="og:description"
+          content="Welcome to my personal site."
         />
 
         <meta name="twitter:card" content="summary_large_image" />
