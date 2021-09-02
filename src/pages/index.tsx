@@ -20,8 +20,6 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 
-import Head from "next/head";
-
 import { Main } from "../components/wrapper/Main";
 
 import { CHECK_YOUR_CONNECTION_MESSAGE } from "../constants/config";
@@ -33,6 +31,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Projects } from "../functions/lib/types";
 import { techStackList } from "../constants/techStacks";
 import { useAppToast } from "../components/ui/AppToast";
+import AppHeader from "../components/ui/AppHeader";
 
 export async function getStaticProps() {
   const projectList = await getAllProjects();
@@ -62,33 +61,10 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
 
   return (
     <Main>
-      <Head>
-        <link rel="icon" href="/assets/YG.png"></link>
-        <title>YehezGun | Home</title>
-
-        <meta property="og:url" content="https://yehezgun.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="YehezGun | Home" />
-        <meta
-          property="og:image"
-          content="https://yehezgun.com//assets/yehez-profile.png"
-        />
-        <meta
-          property="og:description"
-          content="Welcome to my personal site."
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="YehezGun | Home" />
-        <meta
-          name="twitter:description"
-          content="Welcome to my personal site."
-        />
-        <meta
-          name="twitter:image"
-          content="https://yehezgun.com//assets/yehez-profile.png"
-        />
-      </Head>
+      <AppHeader
+        pageTitle="Home"
+        pageDesc="Welcome to my personal site. Take a look and enjoy."
+      />
       <Flex justifyContent="space-between" align="center" gridGap={4}>
         <Stack spacing={2}>
           <Text fontSize="2xl">

@@ -8,7 +8,6 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Head from "next/head";
 import { Main } from "../../components/wrapper/Main";
 import { getAllPosts } from "../../functions/lib/fetcher";
 import {
@@ -21,6 +20,7 @@ import { useAppToast } from "../../components/ui/AppToast";
 import { Articles as ArticlesType } from "../../functions/lib/types";
 import { useEffect } from "react";
 import { formatDate } from "../../functions/helpers/formatDate";
+import AppHeader from "../../components/ui/AppHeader";
 
 export async function getStaticProps() {
   const articleList = await getAllPosts();
@@ -58,28 +58,11 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
 
   return (
     <Main>
-      <Head>
-        <link rel="icon" href="/assets/YG.png"></link>
-        <title>YehezGun | Articles</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-
-        <meta property="og:url" content="https://yehezgun.com/articles" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="YehezGun | Articles" />
-        <meta property="og:description" content="Just random thoughts." />
-        <meta
-          property="og:image"
-          content="https://yehezgun.com//assets/yehez-profile.png"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="YehezGun | Articles" />
-        <meta name="twitter:description" content="Just random thoughts." />
-        <meta
-          name="twitter:image"
-          content="https://yehezgun.com//assets/yehez-profile.png"
-        />
-      </Head>
+      <AppHeader
+        pageTitle="Articles"
+        pageDesc="Just some random thoughts. (The articles is written is Bahasa)"
+        route="articles"
+      />
       <Text fontSize="2xl">
         <b>Articles</b>
       </Text>

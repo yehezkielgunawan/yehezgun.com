@@ -8,7 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Head from "next/head";
+import AppHeader from "../../components/ui/AppHeader";
 import { Main } from "../../components/wrapper/Main";
 import { contactList } from "../../constants/contactList";
 import { useDesktopWidthCheck } from "../../functions/helpers/desktopWidthCheck";
@@ -18,34 +18,11 @@ function AboutMe() {
 
   return (
     <Main>
-      <Head>
-        <link rel="icon" href="/assets/YG.png"></link>
-        <title>YehezGun | About Me</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-
-        <meta property="og:url" content="https://yehezgun.com/aboutme" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="YehezGun | About Me" />
-        <meta
-          property="og:description"
-          content="This is a little description about me,"
-        />
-        <meta
-          property="og:image"
-          content="https://yehezgun.com//assets/yehez-profile.png"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="YehezGun | About Me" />
-        <meta
-          name="twitter:description"
-          content="This is a little description about me"
-        />
-        <meta
-          name="twitter:image"
-          content="https://yehezgun.com//assets/yehez-profile.png"
-        />
-      </Head>
+      <AppHeader
+        pageTitle="About Me"
+        pageDesc="A little description about me."
+        route="aboutme"
+      />
       <Flex
         justifyContent="space-between"
         gridGap={isDesktopWidth ? 8 : 4}
