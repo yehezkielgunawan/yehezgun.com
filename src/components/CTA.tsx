@@ -29,7 +29,7 @@ export const CTA = () => {
       position="fixed"
       width="100%"
       opacity="0.95"
-      top="0"
+      top={0}
     >
       <Flex
         justifyContent="space-between"
