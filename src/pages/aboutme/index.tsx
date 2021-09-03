@@ -64,10 +64,10 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
             <Image src="/assets/yehez-profile.png" objectFit="contain" />
           )}
           <Text textAlign="justify">
-            I’m Yehezkiel Gunawan. You can call me Yehez. Currently working as a
-            Frontend Engineer. Currently, I like to crafting some web apps with
-            React and Typescript. I make fun projects or write some articles in
-            my free time and publish it here.
+            I’m Yehezkiel Gunawan, a frontend engineer. You can call me
+            Yehez. Currently, I like to craft some web apps with React and
+            Typescript. I make fun projects or write some articles in my free
+            time and publish it here.
             <br /> <br />I like to explore some new tech stuff, playing games
             sometimes, and watching animes.
           </Text>
