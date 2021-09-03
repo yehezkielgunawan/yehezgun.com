@@ -89,7 +89,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
       </Flex>
 
       <Stack pt={12} spacing={2}>
-        <Text>
+        <Text fontSize="xl">
           <b>Current Favourite Tech Stacks</b>
         </Text>
         <Flex gridGap={4} wrap="wrap">
@@ -117,7 +117,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
       </Stack>
 
       <Stack spacing={3} pt={12}>
-        <Text fontSize="lg">
+        <Text fontSize="xl">
           <b>Newest Projects</b>
         </Text>
         <SimpleGrid columns={[1, null, 2]} spacing={3}>
