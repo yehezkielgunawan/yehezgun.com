@@ -15,10 +15,12 @@ import NextLink from "next/link";
 import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { menuList } from "../constants/menuList";
+import { useRouter } from "next/dist/client/router";
 
 export const CTA = () => {
   const isDesktopWidth = useDesktopWidthCheck();
   const { colorMode } = useColorMode();
+  const router = useRouter();
 
   return (
     <Box
@@ -54,6 +56,7 @@ export const CTA = () => {
                     _hover={{
                       color: "gray.500",
                     }}
+                    color={router.pathname === menu.route && "gray.500"}
                   >
                     <b>{menu.label}</b>
                   </Text>
@@ -64,7 +67,7 @@ export const CTA = () => {
           ) : (
             <>
               <DarkModeSwitch />
-              <Menu>
+              <Menu autoSelect={false}>
                 <MenuButton
                   as={IconButton}
                   aria-label="Options"
@@ -76,8 +79,9 @@ export const CTA = () => {
                     <NextLink key={index} href={menu.route} passHref>
                       <MenuItem
                         _hover={{
-                          color: "gray.500",
+                          bg: "gray.500",
                         }}
+                        bg={router.pathname === menu.route && "gray.500"}
                       >
                         <Text as="a" fontSize="md">
                           <b>{menu.label}</b>
