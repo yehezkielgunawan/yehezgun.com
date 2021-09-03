@@ -30,6 +30,7 @@ export const CTA = () => {
       width="100%"
       opacity="0.95"
       top={0}
+      zIndex={5}
     >
       <Flex
         justifyContent="space-between"
@@ -57,6 +58,7 @@ export const CTA = () => {
                       color: "gray.500",
                     }}
                     color={router.pathname === menu.route && "gray.500"}
+                    cursor="pointer"
                   >
                     <b>{menu.label}</b>
                   </Text>
