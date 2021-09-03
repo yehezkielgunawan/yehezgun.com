@@ -1,7 +1,6 @@
 import {
   Text,
   Box,
-  HStack,
   Icon,
   Stack,
   Image,
@@ -18,6 +17,7 @@ import {
   Flex,
   Img,
   SimpleGrid,
+  Heading,
 } from "@chakra-ui/react";
 
 import { Main } from "../components/wrapper/Main";
@@ -67,11 +67,11 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
       />
       <Flex justifyContent="space-between" align="center" gridGap={4}>
         <Stack spacing={2}>
-          <Text fontSize="2xl">
+          <Heading as="h5" size="xl">
             <b>Hi, I'm Yehezkiel Gunawan.</b>
-          </Text>
+          </Heading>
 
-          <Text fontSize="md" textAlign="justify">
+          <Text fontSize="lg" textAlign="justify">
             Currently work as a frontend developer.
             <br />
             You've found my personal slice of the internet. Take a look and
@@ -81,7 +81,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         {isDesktopWidth && (
           <Image
             src="https://yt3.ggpht.com/a/AGF-l78ZZR7LqHV1HwgAG8xhGoQt-CTeEVS0rmcG=s900-c-k-c0xffffffff-no-rj-mo"
-            boxSize="12rem"
+            w="30%"
             objectFit="contain"
             loading="lazy"
           />
@@ -92,7 +92,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         <Text>
           <b>Current Favourite Tech Stacks</b>
         </Text>
-        <HStack spacing={4}>
+        <Flex gridGap={4} wrap="wrap">
           {techStackList.map((techStack, index) => (
             <Popover key={index} placement="top" trigger="hover">
               <PopoverTrigger>
@@ -113,7 +113,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
               </PopoverContent>
             </Popover>
           ))}
-        </HStack>
+        </Flex>
       </Stack>
 
       <Stack spacing={3} pt={12}>

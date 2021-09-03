@@ -7,6 +7,7 @@ import {
   Skeleton,
   Stack,
   Text,
+  Heading
 } from "@chakra-ui/react";
 import { Main } from "../../components/wrapper/Main";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
@@ -54,9 +55,9 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
         route="projects"
       />
 
-      <Text fontSize="2xl">
+      <Heading as="h5" size="lg">
         <b>Projects</b>
-      </Text>
+      </Heading>
 
       {dataProjects.map((project, index) => (
         <Skeleton key={index} isLoaded={dataProjects ? true : false}>
@@ -69,6 +70,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
               overflow="hidden"
               borderRadius={10}
               borderWidth={2}
+              w="100%"
             >
               <Stack spacing={3} px={3}>
                 <Flex justifyContent="space-between">
@@ -97,14 +99,14 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                     <Image
                       src={project.image_url[1].url}
                       objectFit="contain"
-                      boxSize={isDesktopWidth ? "120px" : "100px"}
+                      boxSize={isDesktopWidth ? "150px" : "100px"}
                       align="center"
                     />
                   ) : (
                     <Image
                       src={DEFAULT_IMG}
                       objectFit="contain"
-                      boxSize={isDesktopWidth ? "120px" : "100px"}
+                      boxSize={isDesktopWidth ? "150px" : "100px"}
                       align="center"
                     />
                   )}

@@ -7,6 +7,7 @@ import {
   Spinner,
   Stack,
   Text,
+  Heading
 } from "@chakra-ui/react";
 import { Main } from "../../components/wrapper/Main";
 import { getAllPosts } from "../../functions/lib/fetcher";
@@ -63,9 +64,9 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
         pageDesc="Just some random thoughts. (The articles is written is Bahasa)"
         route="articles"
       />
-      <Text fontSize="2xl">
+      <Heading as="h5" size="2xl">
         <b>Articles</b>
-      </Text>
+      </Heading>
       <Text fontSize="lg">
         Just some random thoughts. (The articles written in Bahasa)
       </Text>
@@ -91,14 +92,14 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
                   <Image
                     src={article.article_image[0].url}
                     objectFit="contain"
-                    boxSize={isDesktopWidth ? "150px" : "100px"}
+                    boxSize={isDesktopWidth ? "180px" : "100px"}
                     align="center"
                   />
                 ) : (
                   <Image
                     src={DEFAULT_IMG_ARTICLE}
                     objectFit="contain"
-                    boxSize={isDesktopWidth ? "150px" : "100px"}
+                    boxSize={isDesktopWidth ? "180px" : "100px"}
                     align="center"
                   />
                 )}
