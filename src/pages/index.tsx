@@ -88,7 +88,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         )}
       </Flex>
 
-      <Stack pt={12} spacing={2}>
+      <Stack py={6} spacing={2}>
         <Text fontSize="xl">
           <b>Current Favourite Tech Stacks</b>
         </Text>
@@ -116,7 +116,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         </Flex>
       </Stack>
 
-      <Stack spacing={3} pt={12}>
+      <Stack spacing={3} pt={6}>
         <Text fontSize="xl">
           <b>Newest Projects</b>
         </Text>
