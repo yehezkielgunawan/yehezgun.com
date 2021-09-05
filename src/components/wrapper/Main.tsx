@@ -1,7 +1,11 @@
-import { Stack, StackProps } from "@chakra-ui/react";
+import { ReactNode } from "react";
 import MotionStack from "../motion/MotionStack";
 
-export const Main = (props: StackProps) => (
+type MainProps = {
+  children: ReactNode;
+};
+
+export const Main = ({ children }: MainProps) => (
   <MotionStack
     variants={{
       before: { opacity: 0, y: 25, transition: { type: "spring" } },
@@ -9,14 +13,13 @@ export const Main = (props: StackProps) => (
     }}
     initial="before"
     animate="after"
+    width="100%"
+    maxWidth="48rem"
+    pt="4rem"
+    px="1rem"
+    mt={8}
+    spacing={4}
   >
-    <Stack
-      width="100%"
-      maxWidth="48rem"
-      pt="4rem"
-      px="1rem"
-      mt={12}
-      {...props}
-    />
+    {children}
   </MotionStack>
 );

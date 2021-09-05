@@ -7,7 +7,7 @@ import {
   Spinner,
   Stack,
   Text,
-  Heading
+  Heading,
 } from "@chakra-ui/react";
 import { Main } from "../../components/wrapper/Main";
 import { getAllPosts } from "../../functions/lib/fetcher";
@@ -50,7 +50,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
 
   if (!dataArticles || dataArticles.length < 1)
     return (
-      <Main justifyContent="center">
+      <Main>
         <Center>
           <Spinner></Spinner>
         </Center>
@@ -104,7 +104,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
                   />
                 )}
                 <Stack spacing={2}>
-                  <Text fontSize="lg">
+                  <Text fontSize="xl">
                     <b>{article.title}</b>
                   </Text>
                   <Text>{formatDate(article.date)}</Text>

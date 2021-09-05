@@ -7,7 +7,7 @@ import {
   Skeleton,
   Stack,
   Text,
-  Heading
+  Heading,
 } from "@chakra-ui/react";
 import { Main } from "../../components/wrapper/Main";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
@@ -48,7 +48,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
   }, [dataProjects]);
 
   return (
-    <Main spacing={4}>
+    <Main>
       <AppHeader
         pageTitle="Projects"
         pageDesc="This is my personal projects that I've done before."
@@ -74,7 +74,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
             >
               <Stack spacing={3} px={3}>
                 <Flex justifyContent="space-between">
-                  <Text fontSize="lg">
+                  <Text fontSize="xl">
                     <b>{project.project_title}</b>
                   </Text>
                   <ExternalLinkIcon fontSize="lg" />
