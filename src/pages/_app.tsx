@@ -4,6 +4,7 @@ import theme from "../theme";
 import { AppProps } from "next/app";
 import { Container } from "../components/wrapper/Container";
 import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
