@@ -55,14 +55,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
 
   return (
     <Main>
-      <Stack
-        spacing={3}
-        px={2}
-        py={4}
-        bgColor={colorMode === "light" ? "white" : "gray.300"}
-        textColor="black"
-        borderRadius={4}
-      >
+      <Stack spacing={3} px={2} py={4} borderRadius={4}>
         <Head>
           <link rel="icon" href="/assets/YG.png"></link>
           <title>YehezGun | {post.title}</title>
@@ -117,7 +110,13 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
             borderRadius={4}
           />
         )}
-        <NotionRenderer blockMap={blocks} />
+        {colorMode === "light" ? (
+          <NotionRenderer blockMap={blocks} />
+        ) : (
+          <div style={{ WebkitTextFillColor: "white" }}>
+            <NotionRenderer blockMap={blocks} />
+          </div>
+        )}
       </Stack>
     </Main>
   );
