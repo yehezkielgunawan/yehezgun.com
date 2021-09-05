@@ -34,11 +34,11 @@ export const CTA = () => {
     >
       <Flex
         justifyContent="space-between"
-        p={2}
+        py={2}
         align="center"
-        px={4}
         maxW="48rem"
         mx="auto"
+        px={isDesktopWidth ? 0 : 2}
       >
         <NextLink href="/" passHref>
           <Text as="a" fontSize="lg">

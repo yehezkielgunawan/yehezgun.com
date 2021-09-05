@@ -16,6 +16,7 @@ export const Main = ({ children }: MainProps) => (
     width="100%"
     maxWidth="48rem"
     pt="4rem"
+    px={2}
     mt={8}
     spacing={4}
   >
