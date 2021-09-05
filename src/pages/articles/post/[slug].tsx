@@ -57,7 +57,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
     <Main>
       <Stack
         spacing={3}
-        px="1rem"
+        px={2}
         py={4}
         bgColor={colorMode === "light" ? "white" : "gray.300"}
         textColor="black"
