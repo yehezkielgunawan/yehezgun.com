@@ -74,14 +74,11 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
             property="og:description"
             content="Yehezkiel Gunawan's Article Post"
           />
-          {post.article_image?.length > 0 ? (
-            <meta property="og:image" content={post.article_image[0].url} />
-          ) : (
-            <meta
-              property="og:image"
-              content={`https://socialify.git.ci/yehezkielgunawan/yehezgun.com?description=1&descriptionEditable=${post.title}&font=KoHo&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa9%2FAssassination_Classroom_-_Koro-sensei_smiling_head.svg%2F950px-Assassination_Classroom_-_Koro-sensei_smiling_head.svg.png&pattern=Circuit%20Board&theme=Dark`}
-            />
-          )}
+
+          <meta
+            property="og:image"
+            content={`https://socialify.git.ci/yehezkielgunawan/yehezgun.com?description=1&descriptionEditable=${post.title}&font=KoHo&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa9%2FAssassination_Classroom_-_Koro-sensei_smiling_head.svg%2F950px-Assassination_Classroom_-_Koro-sensei_smiling_head.svg.png&pattern=Circuit%20Board&theme=Dark`}
+          />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="YehezGun | Post" />
