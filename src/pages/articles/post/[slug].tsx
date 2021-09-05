@@ -77,7 +77,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
 
           <meta
             property="og:image"
-            content={`https://socialify.git.ci/yehezkielgunawan/yehezgun.com?description=1&descriptionEditable=${post.title}&font=KoHo&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa9%2FAssassination_Classroom_-_Koro-sensei_smiling_head.svg%2F950px-Assassination_Classroom_-_Koro-sensei_smiling_head.svg.png&pattern=Circuit%20Board&theme=Dark`}
+            content={`https://socialify.git.ci/yehezkielgunawan/yehezgun.com/image?description=1&descriptionEditable=${post.title}}&font=KoHo&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa9%2FAssassination_Classroom_-_Koro-sensei_smiling_head.svg%2F950px-Assassination_Classroom_-_Koro-sensei_smiling_head.svg.png&pattern=Circuit%20Board&theme=Dark`}
           />
 
           <meta name="twitter:card" content="summary_large_image" />
@@ -88,7 +88,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
           />
           <meta
             name="twitter:image"
-            content={`https://socialify.git.ci/yehezkielgunawan/yehezgun.com?description=1&descriptionEditable=${post.title}&font=KoHo&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa9%2FAssassination_Classroom_-_Koro-sensei_smiling_head.svg%2F950px-Assassination_Classroom_-_Koro-sensei_smiling_head.svg.png&pattern=Circuit%20Board&theme=Dark`}
+            content={`https://socialify.git.ci/yehezkielgunawan/yehezgun.com/image?description=1&descriptionEditable=${post.title}&font=KoHo&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa9%2FAssassination_Classroom_-_Koro-sensei_smiling_head.svg%2F950px-Assassination_Classroom_-_Koro-sensei_smiling_head.svg.png&pattern=Circuit%20Board&theme=Dark`}
           />
         </Head>
         <NextLink href="../" passHref>
