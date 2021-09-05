@@ -58,7 +58,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
       <Stack spacing={3} px={2} py={4} borderRadius={4}>
         <Head>
           <link rel="icon" href="/assets/YG.png"></link>
-          <title>YehezGun | {post.title}</title>
+          <title>{post.title} | YehezGun</title>
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
@@ -70,22 +70,28 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
           />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={`YehezGun | ${post.title}`} />
-          <meta property="og:description" content={post.title} />
+          <meta
+            property="og:description"
+            content="Yehezkiel Gunawan's Article Post"
+          />
           {post.article_image?.length > 0 ? (
             <meta property="og:image" content={post.article_image[0].url} />
           ) : (
             <meta
               property="og:image"
-              content="https://yehezgun.com/assets/yehez-profile.png"
+              content={`https://socialify.git.ci/yehezkielgunawan/yehezgun.com?description=1&descriptionEditable=${post.title}&font=KoHo&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa9%2FAssassination_Classroom_-_Koro-sensei_smiling_head.svg%2F950px-Assassination_Classroom_-_Koro-sensei_smiling_head.svg.png&pattern=Circuit%20Board&theme=Dark`}
             />
           )}
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="YehezGun | Post" />
-          <meta name="twitter:description" content={post.title} />
+          <meta
+            name="twitter:description"
+            content="Yehezkiel Gunawan's Article Post"
+          />
           <meta
             name="twitter:image"
-            content="https://yehezgun.com/assets/yehez-profile.png"
+            content={`https://socialify.git.ci/yehezkielgunawan/yehezgun.com?description=1&descriptionEditable=${post.title}&font=KoHo&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa9%2FAssassination_Classroom_-_Koro-sensei_smiling_head.svg%2F950px-Assassination_Classroom_-_Koro-sensei_smiling_head.svg.png&pattern=Circuit%20Board&theme=Dark`}
           />
         </Head>
         <NextLink href="../" passHref>
