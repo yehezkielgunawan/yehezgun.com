@@ -10,26 +10,26 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
   return (
     <Head>
       <link rel="icon" href="/assets/YG.png"></link>
-      <title>YehezGun | {pageTitle}</title>
+      <title>{pageTitle} | YehezGun</title>
 
       <meta
         property="og:url"
         content={`https://yehezgun.com/${route ? route : ""}`}
       />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={`YehezGun | ${pageTitle}`} />
+      <meta property="og:title" content={`${pageTitle} | YehezGun`} />
       <meta
         property="og:image"
-        content="https://yehezgun.com/assets/yehez-profile.png"
+        content={`https://yehez-og-image.yehezgun.com/${pageTitle}%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg&widths=250&heights=auto`}
       />
       <meta property="og:description" content={pageDesc} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={`YehezGun | ${pageTitle}`} />
+      <meta name="twitter:title" content={`${pageTitle} | YehezGun`} />
       <meta name="twitter:description" content={pageDesc} />
       <meta
         name="twitter:image"
-        content="https://yehezgun.com/assets/yehez-profile.png"
+        content={`https://yehez-og-image.yehezgun.com/${pageTitle}%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg&widths=250&heights=auto`}
       />
     </Head>
   );
