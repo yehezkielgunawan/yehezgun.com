@@ -13,5 +13,5 @@ I created this web by the help and resources that I got from :
 - React Notion Boilerplate at [https://github.com/splitbee/react-notion-blog](https://github.com/splitbee/react-notion-blog)
 
 ## Future Improvement
+- [X] Dynamic OG Image preview for articles
 - [ ] SEO Optimization
-- [ ] Dynamic OG Image preview for articles
