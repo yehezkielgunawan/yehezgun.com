@@ -74,14 +74,11 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
             property="og:description"
             content="Yehezkiel Gunawan's Article Post"
           />
-          {post.article_image?.length > 0 ? (
-            <meta property="og:image" content={post.article_image[0].url} />
-          ) : (
-            <meta
-              property="og:image"
-              content="https://yehezgun.com/assets/yehez-profile.png"
-            />
-          )}
+
+          <meta
+            property="og:image"
+            content={`https://yehez-og-image.yehezgun.com/${post.title}?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg&widths=auto&heights=auto`}
+          />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={` ${post.title} | YehezGun`} />
@@ -91,7 +88,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
           />
           <meta
             name="twitter:image"
-            content="https://yehezgun.com/assets/yehez-profile.png"
+            content={`https://yehez-og-image.yehezgun.com/${post.title}?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg&widths=auto&heights=auto`}
           />
         </Head>
         <NextLink href="../" passHref>
