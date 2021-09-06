@@ -74,7 +74,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
             property="og:description"
             content="Yehezkiel Gunawan's Article Post"
           />
-          {post.article_image ? (
+          {post.article_image?.length > 0 ? (
             <meta property="og:image" content={post.article_image[0].url} />
           ) : (
             <meta
