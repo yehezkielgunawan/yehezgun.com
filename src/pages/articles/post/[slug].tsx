@@ -50,6 +50,10 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
   blocks,
 }) => {
   const { colorMode } = useColorMode();
+  const divStyle = {
+    WebkitTextFillColor: "white",
+    color: "white",
+  };
 
   if (!post) return <Spinner />;
 
@@ -116,7 +120,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
         {colorMode === "light" ? (
           <NotionRenderer blockMap={blocks} />
         ) : (
-          <div style={{ WebkitTextFillColor: "white" }}>
+          <div style={divStyle}>
             <NotionRenderer blockMap={blocks} />
           </div>
         )}
