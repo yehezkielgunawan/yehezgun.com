@@ -66,7 +66,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
           description="Yehezkiel Gunawan's Article Post"
           openGraph={{
             url: `https://yehezgun.com/articles/post/${post.slug}`,
-            title: `${post.title}`,
+            title: `${post.title} | YehezGun`,
             description: `Yehezkiel Gunawan's Article Post`,
             type: `website`,
             images: [
