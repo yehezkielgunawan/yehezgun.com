@@ -111,6 +111,12 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
               },
             ],
           }}
+          additionalLinkTags={[
+            {
+              rel: "icon",
+              href: "/assets/YG_logo.png",
+            },
+          ]}
         />
         <NextLink href="../" passHref>
           <Text
