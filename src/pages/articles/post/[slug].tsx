@@ -62,7 +62,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
     <Main>
       <Stack spacing={3} px={2} py={4} borderRadius={4}>
         <Head>
-          <link rel="icon" href="/assets/YG.png"></link>
+          <link rel="icon" href="/assets/YG_logo.png"></link>
           <title>{post.title} | YehezGun</title>
           <meta
             name="viewport"

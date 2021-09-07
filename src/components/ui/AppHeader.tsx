@@ -9,7 +9,7 @@ type AppHeaderProps = {
 const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
   return (
     <Head>
-      <link rel="icon" href="/assets/YG.png"></link>
+      <link rel="icon" href="/assets/YG_logo.png"></link>
       <title>{pageTitle} | YehezGun</title>
 
       <meta

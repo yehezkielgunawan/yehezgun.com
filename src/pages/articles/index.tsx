@@ -52,7 +52,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
     return (
       <Main>
         <Center>
-          <Spinner></Spinner>
+          <Spinner />
         </Center>
       </Main>
     );
