@@ -61,41 +61,6 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
   return (
     <Main>
       <Stack spacing={3} px={2} py={4} borderRadius={4}>
-        {/* <Head>
-          <link rel="icon" href="/assets/YG_logo.png"></link>
-          <title>{post.title} | YehezGun</title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-
-          <meta
-            property="og:url"
-            content={`https://yehezgun.com/articles/post/${post.slug}`}
-          />
-          <meta property="og:type" content="article" />
-          <meta property="og:title" content={`${post.title} | YehezGun`} />
-          <meta
-            property="og:description"
-            content="Yehezkiel Gunawan's Article Post"
-          />
-
-          <meta
-            property="og:image"
-            content={`https://yehez-og-image.yehezgun.com/**${post.title}**%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg`}
-          />
-
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={` ${post.title} | YehezGun`} />
-          <meta
-            name="twitter:description"
-            content="Yehezkiel Gunawan's Article Post"
-          />
-          <meta
-            name="twitter:image"
-            content={`https://yehez-og-image.yehezgun.com/**${post.title}**%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg`}
-          />
-        </Head> */}
         <NextSeo
           title={`${post.title} | YehezGun`}
           description="Yehezkiel Gunawan's Article Post"
@@ -106,7 +71,9 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
             type: `website`,
             images: [
               {
-                url: `https://yehez-og-image.yehezgun.com/**${encodeURIComponent(post.title.trim())}**%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg`,
+                url: `https://yehez-og-image.yehezgun.com/**${encodeURIComponent(
+                  post.title.trim(),
+                )}**%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg`,
                 alt: `${post.title} | YehezGun`,
               },
             ],
