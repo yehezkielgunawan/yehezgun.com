@@ -27,6 +27,11 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
           },
         ],
       }}
+      twitter={{
+        handle: "@handle",
+        site: "@site",
+        cardType: "summary_large_image",
+      }}
       additionalLinkTags={[
         {
           rel: "icon",

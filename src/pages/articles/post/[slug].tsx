@@ -80,6 +80,11 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
               },
             ],
           }}
+          twitter={{
+            handle: "@handle",
+            site: "@site",
+            cardType: "summary_large_image",
+          }}
           additionalLinkTags={[
             {
               rel: "icon",
