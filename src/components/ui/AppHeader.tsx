@@ -11,6 +11,7 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
     <NextSeo
       title={pageTitle}
       description={pageDesc}
+      canonical={`https://yehezgun.com/${route ? route : ""}`}
       openGraph={{
         url: `https://yehezgun.com/${route ? route : ""}`,
         title: `${pageTitle} | YehezGun`,
