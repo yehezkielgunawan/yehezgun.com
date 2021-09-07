@@ -7,7 +7,7 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import NextLink from "next/link";
 import React from "react";
 import { BlockMapType, NotionRenderer } from "react-notion";
@@ -61,7 +61,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
   return (
     <Main>
       <Stack spacing={3} px={2} py={4} borderRadius={4}>
-        <Head>
+        {/* <Head>
           <link rel="icon" href="/assets/YG_logo.png"></link>
           <title>{post.title} | YehezGun</title>
           <meta
@@ -95,7 +95,23 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
             name="twitter:image"
             content={`https://yehez-og-image.yehezgun.com/**${post.title}**%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg`}
           />
-        </Head>
+        </Head> */}
+        <NextSeo
+          title={`${post.title} | YehezGun`}
+          description="Yehezkiel Gunawan's Article Post"
+          openGraph={{
+            url: `https://yehezgun.com/articles/post/${post.slug}`,
+            title: `${post.title}`,
+            description: `Yehezkiel Gunawan's Article Post`,
+            type: `article`,
+            images: [
+              {
+                url: `https://yehez-og-image.yehezgun.com/**${post.title}**%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630902976%2FAssassination_Classroom_-_Koro-sensei_smiling_head_fwpndi.svg`,
+                alt: `${post.title} | YehezGun`,
+              },
+            ],
+          }}
+        />
         <NextLink href="../" passHref>
           <Text
             as="a"
