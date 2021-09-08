@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import { yehezOgImage } from "../../functions/helpers/yehezOgImage";
 
 type AppHeaderProps = {
   pageTitle: string;
@@ -19,9 +20,7 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
         type: `website`,
         images: [
           {
-            url: `https://yehez-og-image.yehezgun.com/**${encodeURIComponent(
-              pageTitle.trim(),
-            )}**%20%7C%20YehezGun.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1630987481%2FYG_logo_trg6fp.png&widths=200&heights=200`,
+            url: `${yehezOgImage(pageTitle, false)}`,
             alt: `${pageTitle} | YehezGun`,
             width: 800,
             height: 600,
