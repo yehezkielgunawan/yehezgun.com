@@ -10,7 +10,7 @@ type AppHeaderProps = {
 const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
   return (
     <NextSeo
-      title={pageTitle}
+      title={`${pageTitle} | YehezGun`}
       description={pageDesc}
       canonical={`https://yehezgun.com/${route ? route : ""}`}
       openGraph={{
@@ -20,7 +20,10 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
         type: `website`,
         images: [
           {
-            url: `${yehezOgImage(pageTitle, false)}`,
+            url: `${yehezOgImage(
+              pageTitle,
+              route.includes("articles/post") ? true : false,
+            )}`,
             alt: `${pageTitle} | YehezGun`,
             width: 800,
             height: 600,
