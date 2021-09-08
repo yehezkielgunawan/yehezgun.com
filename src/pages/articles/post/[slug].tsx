@@ -7,12 +7,11 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { NextSeo } from "next-seo";
 import NextLink from "next/link";
 import React from "react";
 import { BlockMapType, NotionRenderer } from "react-notion";
+import AppHeader from "../../../components/ui/AppHeader";
 import { Main } from "../../../components/wrapper/Main";
-import { yehezOgImage } from "../../../functions/helpers/yehezOgImage";
 import { getAllPosts, getBlocks } from "../../../functions/lib/fetcher";
 import { SingleArticle } from "../../../functions/lib/types";
 
@@ -62,7 +61,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
   return (
     <Main>
       <Stack spacing={3} px={2} py={4} borderRadius={4}>
-        <NextSeo
+        {/* <NextSeo
           title={`${post.title} | YehezGun`}
           description="Yehezkiel Gunawan's Article Post"
           canonical={`https://yehezgun.com/articles/post/${post.slug}`}
@@ -91,6 +90,11 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
               href: "/assets/YG_logo.png",
             },
           ]}
+        /> */}
+        <AppHeader
+          pageTitle={post.title}
+          pageDesc="Yehezkiel Gunawan's Article Post"
+          route={`articles/post/${post.slug}`}
         />
         <NextLink href="../" passHref>
           <Text
