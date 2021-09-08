@@ -20,10 +20,7 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
         type: `website`,
         images: [
           {
-            url: `${yehezOgImage(
-              pageTitle,
-              route && route.includes("articles/post") ? true : false,
-            )}`,
+            url: `${yehezOgImage(pageTitle, false)}`,
             alt: `${pageTitle} | YehezGun`,
             width: 800,
             height: 600,
