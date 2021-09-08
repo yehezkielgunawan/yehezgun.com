@@ -1,10 +1,10 @@
 import {
+  Link as ChakraLink,
   Divider,
   Flex,
   Heading,
   Icon,
   Image,
-  Link as ChakraLink,
   Skeleton,
   Stack,
   Text,

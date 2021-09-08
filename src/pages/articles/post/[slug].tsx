@@ -1,3 +1,4 @@
+import React from "react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import {
   Heading,
@@ -7,9 +8,8 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
-import React from "react";
 import { BlockMapType, NotionRenderer } from "react-notion";
+import NextLink from "next/link";
 import AppHeader from "../../../components/ui/AppHeader";
 import { Main } from "../../../components/wrapper/Main";
 import { getAllPosts, getBlocks } from "../../../functions/lib/fetcher";
@@ -61,36 +61,6 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
   return (
     <Main>
       <Stack spacing={3} px={2} py={4} borderRadius={4}>
-        {/* <NextSeo
-          title={`${post.title} | YehezGun`}
-          description="Yehezkiel Gunawan's Article Post"
-          canonical={`https://yehezgun.com/articles/post/${post.slug}`}
-          openGraph={{
-            url: `https://yehezgun.com/articles/post/${post.slug}`,
-            title: `${post.title} | YehezGun`,
-            description: `Yehezkiel Gunawan's Article Post`,
-            type: `website`,
-            images: [
-              {
-                url: `${yehezOgImage(post.title, true)}`,
-                alt: `${post.title} | YehezGun`,
-                width: 800,
-                height: 600,
-              },
-            ],
-          }}
-          twitter={{
-            handle: "@handle",
-            site: "@site",
-            cardType: "summary_large_image",
-          }}
-          additionalLinkTags={[
-            {
-              rel: "icon",
-              href: "/assets/YG_logo.png",
-            },
-          ]}
-        /> */}
         <AppHeader
           pageTitle={post.title}
           pageDesc="Yehezkiel Gunawan's Article Post"

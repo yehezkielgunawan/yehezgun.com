@@ -2,12 +2,12 @@ import {
   Box,
   Center,
   Flex,
+  Heading,
   Image,
   Skeleton,
   Spinner,
   Stack,
   Text,
-  Heading,
 } from "@chakra-ui/react";
 import { Main } from "../../components/wrapper/Main";
 import { getAllPosts } from "../../functions/lib/fetcher";

@@ -1,13 +1,13 @@
 import {
   Box,
+  Link as ChakraLink,
   Flex,
   HStack,
+  Heading,
   Image,
-  Link as ChakraLink,
   Skeleton,
   Stack,
   Text,
-  Heading,
 } from "@chakra-ui/react";
 import { Main } from "../../components/wrapper/Main";
 import { ExternalLinkIcon } from "@chakra-ui/icons";

@@ -35,6 +35,20 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-inferrable-types": "off",
     "no-undefined": "warn",
-    "complexity": "warn"
+    "complexity": "warn",
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": [
+          "none",
+          "all",
+          "single",
+          "multiple"
+        ]
+      }
+    ]
   }
 }
