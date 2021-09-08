@@ -70,9 +70,15 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
             I’m Yehezkiel Gunawan, a frontend engineer. You can call me Yehez.
             Currently, I like to craft some web apps with React and Typescript.
             I make fun projects or write some articles in my free time and
-            publish it here.
-            <br /> <br />I like to explore some new tech stuff, playing games
-            sometimes, and watching animes.
+            publish it here. <br /> <br />
+            I like to explore some new tech stuff, playing games sometimes, and
+            watching animes. <br />
+          </Text>
+          <Text fontSize="sm">
+            <i>
+              Note: Actually, I'm afraid of the live coding interview or
+              session, but if I have to, I'll do it whatever it takes 😁.
+            </i>
           </Text>
           <Flex gridGap={3} wrap="wrap">
             {contactList.map((contact, index) => (
