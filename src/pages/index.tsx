@@ -13,6 +13,7 @@ import {
   PopoverBody,
   PopoverCloseButton,
   PopoverContent,
+  PopoverFooter,
   PopoverTrigger,
   SimpleGrid,
   Skeleton,
@@ -32,6 +33,7 @@ import { Projects } from "../functions/lib/types";
 import { techStackList } from "../constants/techStacks";
 import { useAppToast } from "../components/ui/AppToast";
 import AppHeader from "../components/ui/AppHeader";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export async function getStaticProps() {
   const projectList = await getAllProjects();
@@ -110,6 +112,17 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverBody>{techStack.description}</PopoverBody>
+                <PopoverFooter>
+                  <ChakraLink
+                    textColor="blue.400"
+                    isExternal
+                    href={techStack.footer_url}
+                  >
+                    <Flex gridGap={2} align="center">
+                      Go to the official docs site. <FaExternalLinkAlt />
+                    </Flex>
+                  </ChakraLink>
+                </PopoverFooter>
               </PopoverContent>
             </Popover>
           ))}
