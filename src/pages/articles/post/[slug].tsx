@@ -14,6 +14,7 @@ import AppHeader from "../../../components/ui/AppHeader";
 import { Main } from "../../../components/wrapper/Main";
 import { getAllPosts, getBlocks } from "../../../functions/lib/fetcher";
 import { SingleArticle } from "../../../functions/lib/types";
+import { BlogJsonLd } from "next-seo";
 
 export async function getStaticProps({
   params: { slug },
@@ -66,6 +67,16 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
           pageDesc="Yehezkiel Gunawan's Article Post"
           route={`articles/post/${post.slug}`}
         />
+        <BlogJsonLd
+          url={`https://yehezgun.com/articles/post/${post.slug}`}
+          title={`${post.title} | sozonome`}
+          images={[]}
+          datePublished={new Date(post.date).toISOString()}
+          dateModified={new Date(post.date).toISOString()}
+          authorName="Yehezkiel Gunawan"
+          description={`A blog post by Yehezkiel Gunawan explaining about ${post.title}`}
+        />
+
         <NextLink href="../" passHref>
           <Text
             as="a"
