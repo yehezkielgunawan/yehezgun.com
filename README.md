@@ -14,4 +14,5 @@ I created this web by the help and resources that I got from :
 
 ## Future Improvement
 - [X] Dynamic OG Image preview for articles
-- [ ] SEO Optimization
+- [X] SEO Optimization
+- [ ] Image optimization using Image tag from Next JS
