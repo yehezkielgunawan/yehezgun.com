@@ -4,7 +4,7 @@ import {
   Flex,
   HStack,
   Heading,
-  Image,
+  Img,
   Skeleton,
   Stack,
   Text,
@@ -84,7 +84,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                     <Text>{project.description}</Text>
                     <HStack>
                       {project.made_using.map((framework, index) => (
-                        <Image
+                        <Img
                           key={index}
                           src={framework.url}
                           bgColor="white"
@@ -96,14 +96,14 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                     </HStack>
                   </Stack>
                   {project.image_url ? (
-                    <Image
+                    <Img
                       src={project.image_url[1].url}
                       objectFit="contain"
                       boxSize={isDesktopWidth ? "150px" : "100px"}
                       align="center"
                     />
                   ) : (
-                    <Image
+                    <Img
                       src={DEFAULT_IMG}
                       objectFit="contain"
                       boxSize={isDesktopWidth ? "150px" : "100px"}

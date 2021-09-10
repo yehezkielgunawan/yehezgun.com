@@ -3,7 +3,7 @@ import {
   Center,
   Flex,
   Heading,
-  Image,
+  Img,
   Skeleton,
   Spinner,
   Stack,
@@ -89,14 +89,14 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
             >
               <Flex as="a" gridGap={4} align="center">
                 {article.article_image ? (
-                  <Image
+                  <Img
                     src={article.article_image[0].url}
                     objectFit="contain"
                     boxSize={isDesktopWidth ? "180px" : "100px"}
                     align="center"
                   />
                 ) : (
-                  <Image
+                  <Img
                     src={DEFAULT_IMG_ARTICLE}
                     objectFit="contain"
                     boxSize={isDesktopWidth ? "180px" : "100px"}

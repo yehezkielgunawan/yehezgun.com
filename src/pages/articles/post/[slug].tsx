@@ -2,7 +2,7 @@ import React from "react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import {
   Heading,
-  Image,
+  Img,
   Spinner,
   Stack,
   Text,
@@ -92,7 +92,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: BlockMapType }> = ({
           {post.title}
         </Heading>
         {post.article_image && (
-          <Image
+          <Img
             src={post.article_image[0].url}
             objectFit="contain"
             align="center"
