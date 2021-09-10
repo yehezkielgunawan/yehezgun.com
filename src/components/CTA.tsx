@@ -1,13 +1,13 @@
 import {
-  Text,
+  Box,
   Flex,
+  IconButton,
   Menu,
   MenuButton,
-  IconButton,
-  MenuList,
   MenuItem,
+  MenuList,
+  Text,
   useColorMode,
-  Box,
 } from "@chakra-ui/react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 
