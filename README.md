@@ -15,5 +15,5 @@ I created this web by the help and resources that I got from :
 ## Future Improvement
 - [X] Dynamic OG Image preview for articles
 - [X] SEO Optimization
-- [ ] Add ESLint config to sort and group imports
-- [ ] Image optimization using Image tag from Next JS
+- [X] Image optimization using Image tag from Next JS
+- [ ] Add ESLint config to sort and group imports [pending]
