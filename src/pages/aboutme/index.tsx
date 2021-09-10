@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { GoPrimitiveDot } from "react-icons/go";
+import NextImage from "next/image";
 import AppHeader from "../../components/ui/AppHeader";
 import { useAppToast } from "../../components/ui/AppToast";
 import { Main } from "../../components/wrapper/Main";
@@ -60,10 +61,12 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
         <Stack spacing={isDesktopWidth ? 4 : 3}>
           <Heading as="h5">Yo, hi there!</Heading>
           {!isDesktopWidth && (
-            <Image
+            <NextImage
               src="/assets/yehez-profile.png"
-              objectFit="contain"
-              loading="lazy"
+              width={400}
+              height={isDesktopWidth ? 400 : 250}
+              layout="responsive"
+              alt="Picture of me"
             />
           )}
           <Text textAlign="justify">
@@ -76,7 +79,7 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
           </Text>
           <Text fontSize="sm">
             <i>
-              Note: Actually, I'm afraid of the live coding interview or
+              Fun Fact: Actually, I'm afraid of the live coding interview or
               session, but if I have to, I'll do it whatever it takes 😁.
             </i>
           </Text>
