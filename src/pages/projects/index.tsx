@@ -2,8 +2,8 @@ import {
   Box,
   Link as ChakraLink,
   Flex,
-  HStack,
   Heading,
+  Image,
   Img,
   Skeleton,
   Stack,
@@ -82,9 +82,9 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                 <Flex gridGap={2} align="center" justifyContent="space-between">
                   <Stack spacing={3}>
                     <Text>{project.description}</Text>
-                    <HStack>
+                    <Flex gridGap={2}>
                       {project.made_using.map((framework, index) => (
-                        <Img
+                        <Image
                           key={index}
                           src={framework.url}
                           bgColor="white"
@@ -93,7 +93,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                           fit="contain"
                         />
                       ))}
-                    </HStack>
+                    </Flex>
                   </Stack>
                   {project.image_url ? (
                     <Img
