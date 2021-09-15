@@ -1,6 +1,6 @@
 import { FaDev, FaGithub, FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import { IconType } from "react-icons/lib";
+import { MdEmail } from "react-icons/md";
 
 type SingleContact = {
   name: string;

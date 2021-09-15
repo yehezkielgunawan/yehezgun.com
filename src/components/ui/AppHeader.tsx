@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+
 import { yehezOgImage } from "../../functions/helpers/yehezOgImage";
 
 type AppHeaderProps = {

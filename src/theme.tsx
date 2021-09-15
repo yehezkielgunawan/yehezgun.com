@@ -1,6 +1,7 @@
+import "@fontsource/catamaran";
+
 import { extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
-import "@fontsource/catamaran";
 
 const fonts = { body: "Catamaran" };
 

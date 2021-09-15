@@ -1,4 +1,3 @@
-import React from "react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import {
   Heading,
@@ -8,13 +7,15 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { BlockMapType, NotionRenderer } from "react-notion";
 import NextLink from "next/link";
+import { BlogJsonLd } from "next-seo";
+import React from "react";
+import { BlockMapType, NotionRenderer } from "react-notion";
+
 import AppHeader from "../../../components/ui/AppHeader";
 import { Main } from "../../../components/wrapper/Main";
 import { getAllPosts, getBlocks } from "../../../functions/lib/fetcher";
 import { SingleArticle } from "../../../functions/lib/types";
-import { BlogJsonLd } from "next-seo";
 
 export async function getStaticProps({
   params: { slug },

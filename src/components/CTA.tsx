@@ -1,3 +1,4 @@
+import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
@@ -9,13 +10,12 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { DarkModeSwitch } from "./DarkModeSwitch";
-
-import NextLink from "next/link";
-import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
-import { HamburgerIcon } from "@chakra-ui/icons";
-import { menuList } from "../constants/menuList";
 import { useRouter } from "next/dist/client/router";
+import NextLink from "next/link";
+
+import { menuList } from "../constants/menuList";
+import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
+import { DarkModeSwitch } from "./DarkModeSwitch";
 
 export const CTA = () => {
   const isDesktopWidth = useDesktopWidthCheck();

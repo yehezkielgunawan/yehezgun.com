@@ -1,5 +1,6 @@
-import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import { ColorModeScript } from "@chakra-ui/react";
+// eslint-disable-next-line @next/next/no-document-import-in-page
+import NextDocument, { Head, Html, Main, NextScript } from "next/document";
 
 export default class MyDocument extends NextDocument {
   static async getInitialProps(ctx) {

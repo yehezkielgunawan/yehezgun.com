@@ -1,11 +1,12 @@
-import { ChakraProvider } from "@chakra-ui/react";
-
-import theme from "../theme";
-import { AppProps } from "next/app";
-import { Container } from "../components/wrapper/Container";
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
+
+import { ChakraProvider } from "@chakra-ui/react";
+import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
+
+import { Container } from "../components/wrapper/Container";
+import theme from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

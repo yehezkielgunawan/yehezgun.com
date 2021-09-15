@@ -1,17 +1,18 @@
 import {
-  Link as ChakraLink,
   Divider,
   Flex,
   Heading,
   Icon,
   Image,
+  Link as ChakraLink,
   Skeleton,
   Stack,
   Text,
 } from "@chakra-ui/react";
+import NextImage from "next/image";
 import React, { useEffect } from "react";
 import { GoPrimitiveDot } from "react-icons/go";
-import NextImage from "next/image";
+
 import AppHeader from "../../components/ui/AppHeader";
 import { useAppToast } from "../../components/ui/AppToast";
 import { Main } from "../../components/wrapper/Main";

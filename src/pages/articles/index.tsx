@@ -9,19 +9,20 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { useEffect } from "react";
+
+import AppHeader from "../../components/ui/AppHeader";
+import { useAppToast } from "../../components/ui/AppToast";
 import { Main } from "../../components/wrapper/Main";
-import { getAllPosts } from "../../functions/lib/fetcher";
 import {
   CHECK_YOUR_CONNECTION_MESSAGE,
   DEFAULT_IMG_ARTICLE,
 } from "../../constants/config";
-import NextLink from "next/link";
 import { useDesktopWidthCheck } from "../../functions/helpers/desktopWidthCheck";
-import { useAppToast } from "../../components/ui/AppToast";
-import { Articles as ArticlesType } from "../../functions/lib/types";
-import { useEffect } from "react";
 import { formatDate } from "../../functions/helpers/formatDate";
-import AppHeader from "../../components/ui/AppHeader";
+import { getAllPosts } from "../../functions/lib/fetcher";
+import { Articles as ArticlesType } from "../../functions/lib/types";
 
 export async function getStaticProps() {
   const articleList = await getAllPosts();

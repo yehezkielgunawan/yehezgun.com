@@ -1,13 +1,14 @@
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
-  Link as ChakraLink,
   Divider,
   Flex,
   Heading,
   Icon,
   Image,
   Img,
+  Link as ChakraLink,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -20,20 +21,18 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-
-import { Main } from "../components/wrapper/Main";
-
-import { CHECK_YOUR_CONNECTION_MESSAGE } from "../constants/config";
-import { useEffect } from "react";
 import NextLink from "next/link";
-import { getAllProjects } from "../functions/lib/fetcher";
-import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Projects } from "../functions/lib/types";
-import { techStackList } from "../constants/techStacks";
-import { useAppToast } from "../components/ui/AppToast";
-import AppHeader from "../components/ui/AppHeader";
+import { useEffect } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+
+import AppHeader from "../components/ui/AppHeader";
+import { useAppToast } from "../components/ui/AppToast";
+import { Main } from "../components/wrapper/Main";
+import { CHECK_YOUR_CONNECTION_MESSAGE } from "../constants/config";
+import { techStackList } from "../constants/techStacks";
+import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
+import { getAllProjects } from "../functions/lib/fetcher";
+import { Projects } from "../functions/lib/types";
 
 export async function getStaticProps() {
   const projectList = await getAllProjects();

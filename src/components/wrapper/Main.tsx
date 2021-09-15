@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+
 import MotionStack from "../motion/MotionStack";
 
 type MainProps = {

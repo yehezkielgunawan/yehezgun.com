@@ -1,5 +1,6 @@
 import { Flex, useColorMode } from "@chakra-ui/react";
 import { ReactNode } from "react";
+
 import { CTA } from "../CTA";
 import { FooterComponent } from "../FooterComponent";
 
