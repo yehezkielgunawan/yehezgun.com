@@ -59,6 +59,10 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
       <Heading as="h5" size="lg">
         <b>Projects</b>
       </Heading>
+      <Text fontSize="lg">
+        This is my personal, experiment, and freelance (if it's a public
+        project) project list.
+      </Text>
 
       {dataProjects.map((project, index) => (
         <Skeleton key={index} isLoaded={dataProjects ? true : false}>
