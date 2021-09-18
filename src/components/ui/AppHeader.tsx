@@ -39,7 +39,7 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
       additionalLinkTags={[
         {
           rel: "icon",
-          href: "/assets/YG_logo.png",
+          href: "/assets/yehez_avatar.png",
         },
       ]}
     />
