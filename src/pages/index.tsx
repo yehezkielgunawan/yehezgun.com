@@ -81,7 +81,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         </Stack>
         {isDesktopWidth && (
           <Image
-            src="https://yt3.ggpht.com/a/AGF-l78ZZR7LqHV1HwgAG8xhGoQt-CTeEVS0rmcG=s900-c-k-c0xffffffff-no-rj-mo"
+            src="assets/yehez_avatar.png"
             w="30%"
             objectFit="contain"
             loading="lazy"
