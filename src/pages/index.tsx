@@ -5,17 +5,9 @@ import {
   Divider,
   Flex,
   Heading,
-  Icon,
   Image,
   Img,
   Link as ChakraLink,
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverCloseButton,
-  PopoverContent,
-  PopoverFooter,
-  PopoverTrigger,
   SimpleGrid,
   Skeleton,
   Stack,
@@ -23,10 +15,10 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useEffect } from "react";
-import { FaExternalLinkAlt } from "react-icons/fa";
 
 import AppHeader from "../components/ui/AppHeader";
 import { useAppToast } from "../components/ui/AppToast";
+import PopoverComponent from "../components/ui/PopoverComponent";
 import { Main } from "../components/wrapper/Main";
 import { CHECK_YOUR_CONNECTION_MESSAGE } from "../constants/config";
 import { techStackList } from "../constants/techStacks";
@@ -95,35 +87,12 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         </Text>
         <Flex gridGap={4} wrap="wrap">
           {techStackList.map((techStack, index) => (
-            <Popover key={index} placement="top" trigger="hover">
-              <PopoverTrigger>
-                <Box as="button">
-                  <Icon
-                    _hover={{
-                      color: "gray.500",
-                    }}
-                    as={techStack.icon}
-                    fontSize="4xl"
-                  />
-                </Box>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverBody>{techStack.description}</PopoverBody>
-                <PopoverFooter>
-                  <ChakraLink
-                    textColor="blue.400"
-                    isExternal
-                    href={techStack.footer_url}
-                  >
-                    <Flex gridGap={2} align="center">
-                      Go to the official docs site. <FaExternalLinkAlt />
-                    </Flex>
-                  </ChakraLink>
-                </PopoverFooter>
-              </PopoverContent>
-            </Popover>
+            <PopoverComponent
+              key={index}
+              boxIcon={techStack.icon}
+              description={techStack.description}
+              footer_url={techStack.footer_url}
+            />
           ))}
         </Flex>
       </Stack>
