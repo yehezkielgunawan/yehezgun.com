@@ -1,4 +1,4 @@
-export const yehezOgImage = (text: string, isArticle: boolean) => {
+export const yehezOgImage = (text: string, isArticle: boolean): string  => {
   if (isArticle) {
     return `https://yehez-og-image.yehezgun.com/**${encodeURIComponent(
       text.trim(),
