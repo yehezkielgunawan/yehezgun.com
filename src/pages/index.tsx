@@ -119,7 +119,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
                         <b>{project.project_title}</b>
                         <ExternalLinkIcon pl={1} />
                       </Text>
-                      <Divider></Divider>
+                      <Divider />
                       <Img
                         src={project.image_url[0].url}
                         objectFit="contain"
