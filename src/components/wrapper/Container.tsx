@@ -1,8 +1,7 @@
 import { Flex, useColorMode } from "@chakra-ui/react";
+import { CTA } from "components/CTA";
+import { FooterComponent } from "components/FooterComponent";
 import { ReactNode } from "react";
-
-import { CTA } from "../CTA";
-import { FooterComponent } from "../FooterComponent";
 
 type ContainerProps = {
   children: ReactNode;

@@ -9,18 +9,17 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import AppHeader from "components/ui/AppHeader";
+import { useAppToast } from "components/ui/AppToast";
+import { Main } from "components/wrapper/Main";
+import { CHECK_YOUR_CONNECTION_MESSAGE } from "constants/config";
+import { contactList } from "constants/contactList";
+import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
+import { getAllExperiences } from "functions/lib/fetcher";
+import { Experiences } from "functions/lib/types";
 import NextImage from "next/image";
 import React, { useEffect } from "react";
 import { GoPrimitiveDot } from "react-icons/go";
-
-import AppHeader from "../../components/ui/AppHeader";
-import { useAppToast } from "../../components/ui/AppToast";
-import { Main } from "../../components/wrapper/Main";
-import { CHECK_YOUR_CONNECTION_MESSAGE } from "../../constants/config";
-import { contactList } from "../../constants/contactList";
-import { useDesktopWidthCheck } from "../../functions/helpers/desktopWidthCheck";
-import { getAllExperiences } from "../../functions/lib/fetcher";
-import { Experiences } from "../../functions/lib/types";
 
 export async function getStaticProps() {
   const experienceList = await getAllExperiences();

@@ -10,11 +10,11 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
+import { menuList } from "constants/menuList";
+import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
 import { useRouter } from "next/dist/client/router";
 import NextLink from "next/link";
 
-import { menuList } from "../constants/menuList";
-import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 
 export const CTA = () => {

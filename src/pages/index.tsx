@@ -13,18 +13,17 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import AppHeader from "components/ui/AppHeader";
+import { useAppToast } from "components/ui/AppToast";
+import PopoverComponent from "components/ui/PopoverComponent";
+import { Main } from "components/wrapper/Main";
+import { CHECK_YOUR_CONNECTION_MESSAGE } from "constants/config";
+import { techStackList } from "constants/techStacks";
+import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
+import { getAllProjects } from "functions/lib/fetcher";
+import { Projects } from "functions/lib/types";
 import NextLink from "next/link";
-import { useEffect } from "react";
-
-import AppHeader from "../components/ui/AppHeader";
-import { useAppToast } from "../components/ui/AppToast";
-import PopoverComponent from "../components/ui/PopoverComponent";
-import { Main } from "../components/wrapper/Main";
-import { CHECK_YOUR_CONNECTION_MESSAGE } from "../constants/config";
-import { techStackList } from "../constants/techStacks";
-import { useDesktopWidthCheck } from "../functions/helpers/desktopWidthCheck";
-import { getAllProjects } from "../functions/lib/fetcher";
-import { Projects } from "../functions/lib/types";
+import React, { useEffect } from "react";
 
 export async function getStaticProps() {
   const projectList = await getAllProjects();

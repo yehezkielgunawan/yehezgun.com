@@ -1,6 +1,5 @@
+import MotionStack from "components/motion/MotionStack";
 import { ReactNode } from "react";
-
-import MotionStack from "../motion/MotionStack";
 
 type MainProps = {
   children: ReactNode;

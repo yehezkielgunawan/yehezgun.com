@@ -10,18 +10,14 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
-
-import AppHeader from "../../components/ui/AppHeader";
-import { useAppToast } from "../../components/ui/AppToast";
-import { Main } from "../../components/wrapper/Main";
-import {
-  CHECK_YOUR_CONNECTION_MESSAGE,
-  DEFAULT_IMG,
-} from "../../constants/config";
-import { useDesktopWidthCheck } from "../../functions/helpers/desktopWidthCheck";
-import { getAllProjects } from "../../functions/lib/fetcher";
-import { Projects as ProjectListType } from "../../functions/lib/types";
+import AppHeader from "components/ui/AppHeader";
+import { useAppToast } from "components/ui/AppToast";
+import { Main } from "components/wrapper/Main";
+import { CHECK_YOUR_CONNECTION_MESSAGE, DEFAULT_IMG } from "constants/config";
+import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
+import { getAllProjects } from "functions/lib/fetcher";
+import { Projects as ProjectListType } from "functions/lib/types";
+import React, { useEffect } from "react";
 
 export async function getStaticProps() {
   const projectList = await getAllProjects();
