@@ -17,3 +17,4 @@ I created this web by the help and resources that I got from :
 - [X] SEO Optimization
 - [X] Image optimization using Image tag from Next JS
 - [X] Add ESLint config to sort and group imports (using [simple-sort-import](https://www.npmjs.com/package/eslint-plugin-simple-import-sort))
+- [ ] Change react-notion to [react-notion-x](https://github.com/NotionX/react-notion-x)
