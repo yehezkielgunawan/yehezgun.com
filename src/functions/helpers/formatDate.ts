@@ -1,4 +1,4 @@
-export const formatDate = (date: string | Date, time: boolean = true): string  => {
+export const formatDate = (date: string | Date, time = true): string  => {
   const convertedDate = new Date(date);
 
   const options: Intl.DateTimeFormatOptions = {
