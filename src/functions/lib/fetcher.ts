@@ -1,4 +1,5 @@
-import { BlockMapType } from "react-notion";
+import { NotionAPI } from "notion-client";
+import { ExtendedRecordMap } from "notion-types";
 
 import {
   API_HOST,
@@ -26,6 +27,8 @@ export const getAllExperiences = async (): Promise<Experiences> => {
   });
 };
 
-export const getBlocks = async (postId: string): Promise<BlockMapType> => {
-  return await fetch(`${API_HOST}/page/${postId}`).then((res) => res.json());
+export const getBlocks = async (postId: string): Promise<ExtendedRecordMap> => {
+  const notion = new NotionAPI();
+
+  return await notion.getPage(postId.split("-").join(""));
 };
