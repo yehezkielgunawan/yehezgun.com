@@ -10,6 +10,7 @@ I created this web by the help and resources that I got from :
 
 - Minimalist web design and concept from [https://leerob.io/](https://leerob.io/) and [sznm.dev](https://sznm.dev)
 - React Notion Tutorial at [https://splitbee.io/blog/notion-as-cms-using-nextjs](https://splitbee.io/blog/notion-as-cms-using-nextjs)
+- React Notion X at [react-notion-x](https://github.com/NotionX/react-notion-x)
 - React Notion Boilerplate at [https://github.com/splitbee/react-notion-blog](https://github.com/splitbee/react-notion-blog)
 
 ## Future Improvement
@@ -17,4 +18,4 @@ I created this web by the help and resources that I got from :
 - [X] SEO Optimization
 - [X] Image optimization using Image tag from Next JS
 - [X] Add ESLint config to sort and group imports (using [simple-sort-import](https://www.npmjs.com/package/eslint-plugin-simple-import-sort))
-- [ ] Change react-notion to [react-notion-x](https://github.com/NotionX/react-notion-x)
+- [X] Change react-notion to [react-notion-x](https://github.com/NotionX/react-notion-x) (Need future improvement, due to the lib's styling issues)

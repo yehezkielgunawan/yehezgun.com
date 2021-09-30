@@ -18,6 +18,7 @@ import React from "react";
 import {
   Code,
   Collection,
+  CollectionRow,
   Equation,
   Modal,
   NotionRenderer,
@@ -131,6 +132,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: ExtendedRecordMap }> =
                 ),
                 code: Code,
                 collection: Collection,
+                collectionRow: CollectionRow,
                 modal: Modal,
                 pdf: Pdf,
                 equation: Equation,
@@ -166,6 +168,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: ExtendedRecordMap }> =
                 ),
                 code: Code,
                 collection: Collection,
+                collectionRow: CollectionRow,
                 modal: Modal,
                 pdf: Pdf,
                 equation: Equation,
