@@ -136,7 +136,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         </SimpleGrid>
 
         <NextLink href="/projects" passHref>
-          <Button as="a" variant="outline" width="">
+          <Button as="a" variant="outline">
             See More Projects
           </Button>
         </NextLink>

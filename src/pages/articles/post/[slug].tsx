@@ -1,5 +1,6 @@
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import {
+  Button,
   Heading,
   Img,
   Spinner,
@@ -15,6 +16,7 @@ import NextLink from "next/link";
 import { BlogJsonLd } from "next-seo";
 import { ExtendedRecordMap } from "notion-types";
 import React from "react";
+import { FaChevronLeft } from "react-icons/fa";
 import {
   Code,
   Collection,
@@ -176,6 +178,11 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: ExtendedRecordMap }> =
               darkMode={true}
             />
           )}
+          <NextLink href="../" passHref>
+            <Button as="a" variant="ghost" leftIcon={<FaChevronLeft />} colorScheme="gray">
+              Back to Articles
+            </Button>
+          </NextLink>
         </Stack>
       </Main>
     );

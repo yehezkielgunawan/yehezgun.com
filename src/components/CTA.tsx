@@ -31,6 +31,7 @@ export const CTA = () => {
       opacity="0.95"
       top={0}
       zIndex={5}
+      transition="0.3s ease-out"
     >
       <Flex
         justifyContent="space-between"
