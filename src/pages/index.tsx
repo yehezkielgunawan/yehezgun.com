@@ -38,18 +38,18 @@ export async function getStaticProps() {
 }
 
 const Index = ({ newestProjects }: { newestProjects: Projects }) => {
-  const dataProjects = newestProjects ?? [];
   const isDesktopWidth = useDesktopWidthCheck();
   const toast = useAppToast();
+  const dataProjects = newestProjects ?? [];
 
   useEffect(() => {
-    if (!dataProjects) {
+    if (!newestProjects) {
       toast({
         status: "warning",
         description: CHECK_YOUR_CONNECTION_MESSAGE,
       });
     }
-  }, [dataProjects]);
+  }, [newestProjects, toast]);
 
   return (
     <Main>
@@ -60,13 +60,13 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
       <Flex justifyContent="space-between" align="center" gridGap={4}>
         <Stack spacing={2}>
           <Heading as="h5" size="xl">
-            <b>Hi, I'm Yehezkiel Gunawan.</b>
+            <b>Hi, I&apos;m Yehezkiel Gunawan.</b>
           </Heading>
 
           <Text fontSize="lg" textAlign="justify">
             Currently work as a frontend developer.
             <br />
-            You've found my personal slice of the internet. Take a look and
+            You&apos;ve found my personal slice of the internet. Take a look and
             enjoy.
           </Text>
         </Stack>
@@ -76,6 +76,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
             w="30%"
             objectFit="contain"
             loading="lazy"
+            alt="yehez-avatar"
           />
         )}
       </Flex>

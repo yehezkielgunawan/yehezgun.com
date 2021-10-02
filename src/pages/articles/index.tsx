@@ -46,7 +46,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
         description: CHECK_YOUR_CONNECTION_MESSAGE,
       });
     }
-  }, [articleList]);
+  }, [articleList, toast]);
 
   if (!dataArticles || dataArticles.length < 1)
     return (

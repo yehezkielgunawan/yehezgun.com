@@ -36,13 +36,13 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
   const dataProjects = projectList ?? [];
 
   useEffect(() => {
-    if (!dataProjects) {
+    if (!projectList) {
       toast({
         status: "warning",
         description: CHECK_YOUR_CONNECTION_MESSAGE,
       });
     }
-  }, [dataProjects]);
+  }, [projectList, toast]);
 
   return (
     <Main>
@@ -56,7 +56,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
         <b>Projects</b>
       </Heading>
       <Text fontSize="lg">
-        This is my personal, experiment, and freelance (if it's a public
+        This is my personal, experiment, and freelance (if it&apos;s a public
         project) project list.
       </Text>
 
@@ -92,6 +92,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                           borderRadius={8}
                           boxSize="40px"
                           fit="contain"
+                          alt="project-image"
                         />
                       ))}
                     </Flex>

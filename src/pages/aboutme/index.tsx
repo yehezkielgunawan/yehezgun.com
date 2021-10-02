@@ -38,13 +38,13 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
   const dataExperiences = experienceList ?? [];
 
   useEffect(() => {
-    if (!dataExperiences) {
+    if (!experienceList) {
       toast({
         status: "warning",
         description: CHECK_YOUR_CONNECTION_MESSAGE,
       });
     }
-  }, []);
+  }, [experienceList, toast]);
 
   return (
     <Main>
@@ -81,8 +81,8 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
           </Text>
           <Text fontSize="sm" textAlign="justify">
             <i>
-              Fun Fact: Actually, I'm afraid of the live coding interview or
-              session, but if I have to, I'll do it whatever it takes 😁.
+              Fun Fact: Actually, I&apos;m afraid of the live coding interview or
+              session, but if I have to, I &apos;ll do it whatever it takes 😁.
             </i>
           </Text>
           <Flex gridGap={3} wrap="wrap">
@@ -106,6 +106,7 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
             w="40%"
             borderRadius={4}
             loading="lazy"
+            alt="photo-profile"
           />
         )}
       </Flex>
