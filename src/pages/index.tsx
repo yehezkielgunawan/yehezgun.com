@@ -13,7 +13,6 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import AppHeader from "components/ui/AppHeader";
 import { useAppToast } from "components/ui/AppToast";
 import PopoverComponent from "components/ui/PopoverComponent";
 import { Main } from "components/wrapper/Main";
@@ -53,10 +52,6 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
 
   return (
     <Main>
-      <AppHeader
-        pageTitle="Home"
-        pageDesc="Welcome to my personal site. Take a look and enjoy."
-      />
       <Flex justifyContent="space-between" align="center" gridGap={4}>
         <Stack spacing={2}>
           <Heading as="h5" size="xl">

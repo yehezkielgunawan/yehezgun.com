@@ -22,6 +22,12 @@ const defaultSEOConfig = {
     site: "@site",
     cardType: "summary_large_image",
   },
+  additionalLinkTags: [
+    {
+      rel: "icon",
+      href: "/assets/yehez_avatar.png",
+    },
+  ],
 };
 
 export default defaultSEOConfig;
