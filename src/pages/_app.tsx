@@ -15,20 +15,14 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 
+import defaultSEOConfig from "../../next-seo.config";
 import { Container } from "../components/wrapper/Container";
 import theme from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <DefaultSeo
-        openGraph={{
-          type: "website",
-          locale: "en_IE",
-          url: "https://yehezgun.com/",
-          site_name: "YehezGun",
-        }}
-      />
+      <DefaultSeo {...defaultSEOConfig} />
       <Container>
         <Component {...pageProps} />
       </Container>
