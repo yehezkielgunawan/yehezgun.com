@@ -29,6 +29,7 @@ const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
             height: 600,
           },
         ],
+        site_name: "yehezgun",
       }}
       twitter={{
         handle: "@handle",
