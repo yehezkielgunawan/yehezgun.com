@@ -10,7 +10,7 @@ type AppHeaderProps = {
 const AppHeader = ({ pageTitle, pageDesc, route }: AppHeaderProps) => {
   return (
     <NextSeo
-      title={`${pageTitle} | YehezGun`}
+      title={`${pageTitle}`}
       description={pageDesc}
       canonical={`https://yehezgun.com/${route ? route : ""}`}
       openGraph={{
