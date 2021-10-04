@@ -8,9 +8,9 @@ import "rc-dropdown/assets/index.css";
 import "katex/dist/katex.min.css";
 // // global style overrides for notion
 import "styles/notion.css";
-// // global style overrides for prism theme (optional)
-import "styles/prism-theme.css";
 
+// // global style overrides for prism theme (optional)
+// import "styles/prism-theme.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
