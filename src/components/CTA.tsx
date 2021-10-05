@@ -13,6 +13,7 @@ import {
 import { menuList } from "constants/menuList";
 import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
 import { useRouter } from "next/dist/client/router";
+import NextLink from "next/link";
 
 import { DarkModeSwitch } from "./DarkModeSwitch";
 
@@ -48,19 +49,19 @@ export const CTA = () => {
           {isDesktopWidth ? (
             <>
               {menuList.map((menu, index) => (
-                <Text
-                  key={index}
-                  as="a"
-                  href={menu.route}
-                  fontSize="md"
-                  _hover={{
-                    color: "gray.500",
-                  }}
-                  color={router.pathname === menu.route && "gray.500"}
-                  cursor="pointer"
-                >
-                  <b>{menu.label}</b>
-                </Text>
+                <NextLink key={index} href={menu.route} passHref>
+                  <Text
+                    as="a"
+                    fontSize="md"
+                    _hover={{
+                      color: "gray.500",
+                    }}
+                    color={router.pathname === menu.route && "gray.500"}
+                    cursor="pointer"
+                  >
+                    <b>{menu.label}</b>
+                  </Text>
+                </NextLink>
               ))}
               <DarkModeSwitch />
             </>
@@ -76,19 +77,19 @@ export const CTA = () => {
                 />
                 <MenuList>
                   {menuList.map((menu, index) => (
-                    <MenuItem
-                      key={index}
-                      as="a"
-                      href={menu.route}
-                      _hover={{
-                        bg: "gray.500",
-                      }}
-                      bg={router.pathname === menu.route && "gray.500"}
-                    >
-                      <Text fontSize="md">
-                        <b>{menu.label}</b>
-                      </Text>
-                    </MenuItem>
+                    <NextLink key={index} href={menu.route} passHref>
+                      <MenuItem
+                        as="a"
+                        _hover={{
+                          bg: "gray.500",
+                        }}
+                        bg={router.pathname === menu.route && "gray.500"}
+                      >
+                        <Text fontSize="md">
+                          <b>{menu.label}</b>
+                        </Text>
+                      </MenuItem>
+                    </NextLink>
                   ))}
                 </MenuList>
               </Menu>

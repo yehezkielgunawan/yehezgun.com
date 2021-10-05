@@ -95,18 +95,14 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                       ))}
                     </Flex>
                   </Stack>
-                  <Box>
-                    <Img
-                      src={
-                        project.image_url
-                          ? project.image_url[1].url
-                          : DEFAULT_IMG
-                      }
-                      objectFit="cover"
-                      boxSize={["100px", "140px"]}
-                      align="center"
-                    />
-                  </Box>
+                  <Img
+                    src={
+                      project.image_url ? project.image_url[1].url : DEFAULT_IMG
+                    }
+                    objectFit="cover"
+                    boxSize={["100px", "120px"]}
+                    align="center"
+                  />
                 </Flex>
               </Stack>
             </Box>
