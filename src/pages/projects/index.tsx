@@ -84,9 +84,9 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                   <Stack spacing={3}>
                     <Text>{project.description}</Text>
                     <Flex gridGap={2}>
-                      {project.made_using.map((framework, index) => (
+                      {project.made_using.map((framework, frameworkIndex) => (
                         <Image
-                          key={index}
+                          key={frameworkIndex}
                           src={framework.url}
                           bgColor="white"
                           borderRadius={8}

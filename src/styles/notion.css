@@ -1602,7 +1602,6 @@ svg.notion-page-icon {
   width: 100%;
   display: flex;
   align-items: center;
-  width: 100%;
   padding-left: 2px;
   min-height: calc(1.5em + 3px + 3px);
 }
