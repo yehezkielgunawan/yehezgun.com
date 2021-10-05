@@ -73,13 +73,14 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
           )}
           <Text textAlign="justify">
             I’m Yehezkiel Gunawan, a frontend engineer. You can call me Yehez.
-            Currently, I like to craft some web apps with React and Typescript.
-            I make fun projects or write some articles in my free time and
-            publish it here.
+            Recently, I&apos;m learning React and its libraries. To sharpen my
+            skills, I usually push myself make some mini projects using a library or
+            framework that I want to master and publish it here. Sometimes, I
+            also write an article to explain the process behind it.
           </Text>
           <Text textAlign="justify">
-            I like to explore some new tech stuff, playing games sometimes, and
-            watching animes.
+            Besides of programming things, I like to explore some new tech
+            stuff, playing games sometimes, and watching animes.
           </Text>
           <Text fontSize="sm" textAlign="justify">
             <i>
@@ -123,11 +124,12 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
                 <GoPrimitiveDot />
                 <Stack spacing={2}>
                   <Text fontSize="md">
-                  💼 <b>{experience.role_name}</b>
+                    💼 <b>{experience.role_name}</b>
                   </Text>
                   <Text fontSize="sm">🏢 {experience.company_name}</Text>
                   <Text fontSize="md">
-                  ⌛ <b>
+                    ⌛{" "}
+                    <b>
                       <i>{experience.duration}</i>
                     </b>
                   </Text>
