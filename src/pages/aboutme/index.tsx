@@ -59,7 +59,7 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
         align="center"
       >
         <Stack spacing={isDesktopWidth ? 4 : 3}>
-          <Heading as="h5" size="xl">
+          <Heading as="h5" size="lg">
             Yo, hi there!
           </Heading>
           {!isDesktopWidth && (
@@ -71,18 +71,18 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
               alt="Picture of me"
             />
           )}
-          <Text textAlign="justify">
+          <Text textAlign="justify" fontSize={["sm", "md"]}>
             I’m Yehezkiel Gunawan, a frontend engineer. You can call me Yehez.
             Recently, I&apos;m learning React and its libraries. To sharpen my
-            skills, I usually push myself make some mini projects using a library or
-            framework that I want to master and publish it here. Sometimes, I
-            also write an article to explain the process behind it.
+            skills, I usually push myself make some mini projects using a
+            library or framework that I want to master and publish it here.
+            Sometimes, I also write an article to explain the process behind it.
           </Text>
-          <Text textAlign="justify">
+          <Text textAlign="justify" fontSize={["sm", "md"]}>
             Besides of programming things, I like to explore some new tech
             stuff, playing games sometimes, and watching animes.
           </Text>
-          <Text fontSize="sm" textAlign="justify">
+          <Text fontSize="xs" textAlign="justify">
             <i>
               Fun Fact: Actually, I&apos;m afraid of the live coding interview
               or session, but if I have to, I &apos;ll do it whatever it takes
