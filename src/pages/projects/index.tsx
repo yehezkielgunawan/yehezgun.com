@@ -97,21 +97,14 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                       ))}
                     </Flex>
                   </Stack>
-                  {project.image_url ? (
-                    <Img
-                      src={project.image_url[1].url}
-                      objectFit="contain"
-                      boxSize={isDesktopWidth ? "150px" : "100px"}
-                      align="center"
-                    />
-                  ) : (
-                    <Img
-                      src={DEFAULT_IMG}
-                      objectFit="contain"
-                      boxSize={isDesktopWidth ? "150px" : "100px"}
-                      align="center"
-                    />
-                  )}
+                  <Img
+                    src={
+                      project.image_url ? project.image_url[1].url : DEFAULT_IMG
+                    }
+                    objectFit="contain"
+                    boxSize={isDesktopWidth ? "150px" : "100px"}
+                    align="center"
+                  />
                 </Flex>
               </Stack>
             </Box>

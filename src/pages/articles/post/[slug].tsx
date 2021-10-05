@@ -104,82 +104,50 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: ExtendedRecordMap }> =
               borderRadius={4}
             />
           )}
-          {colorMode === "light" ? (
-            <NotionRenderer
-              recordMap={blocks}
-              components={{
-                pageLink: ({
-                  href,
-                  as,
-                  passHref,
-                  prefetch,
-                  replace,
-                  scroll,
-                  shallow,
-                  locale,
-                  ...props
-                }) => (
-                  <NextLink
-                    href={href}
-                    as={as}
-                    passHref={passHref}
-                    prefetch={prefetch}
-                    replace={replace}
-                    scroll={scroll}
-                    shallow={shallow}
-                    locale={locale}
-                  >
-                    <a {...props} />
-                  </NextLink>
-                ),
-                code: Code,
-                collection: Collection,
-                collectionRow: CollectionRow,
-                modal: Modal,
-                pdf: Pdf,
-                equation: Equation,
-              }}
-            />
-          ) : (
-            <NotionRenderer
-              recordMap={blocks}
-              components={{
-                pageLink: ({
-                  href,
-                  as,
-                  passHref,
-                  prefetch,
-                  replace,
-                  scroll,
-                  shallow,
-                  locale,
-                  ...props
-                }) => (
-                  <NextLink
-                    href={href}
-                    as={as}
-                    passHref={passHref}
-                    prefetch={prefetch}
-                    replace={replace}
-                    scroll={scroll}
-                    shallow={shallow}
-                    locale={locale}
-                  >
-                    <a {...props} />
-                  </NextLink>
-                ),
-                code: Code,
-                collection: Collection,
-                collectionRow: CollectionRow,
-                modal: Modal,
-                pdf: Pdf,
-                equation: Equation,
-              }}
-              darkMode={true}
-            />
-          )}
+
+          <NotionRenderer
+            recordMap={blocks}
+            components={{
+              pageLink: ({
+                href,
+                as,
+                passHref,
+                prefetch,
+                replace,
+                scroll,
+                shallow,
+                locale,
+                ...props
+              }) => (
+                <NextLink
+                  href={href}
+                  as={as}
+                  passHref={passHref}
+                  prefetch={prefetch}
+                  replace={replace}
+                  scroll={scroll}
+                  shallow={shallow}
+                  locale={locale}
+                >
+                  <a {...props} />
+                </NextLink>
+              ),
+              code: Code,
+              collection: Collection,
+              collectionRow: CollectionRow,
+              modal: Modal,
+              pdf: Pdf,
+              equation: Equation,
+            }}
+            darkMode={colorMode === "light" ? false : true}
+          />
           <NextLink href="../" passHref>
-            <Button as="a" variant="ghost" leftIcon={<FaChevronLeft />} colorScheme="gray">
+            <Button
+              as="a"
+              variant="ghost"
+              leftIcon={<FaChevronLeft />}
+              colorScheme="gray"
+            >
               Back to Articles
             </Button>
           </NextLink>
