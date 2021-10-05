@@ -14,7 +14,6 @@ import AppHeader from "components/ui/AppHeader";
 import { useAppToast } from "components/ui/AppToast";
 import { Main } from "components/wrapper/Main";
 import { CHECK_YOUR_CONNECTION_MESSAGE, DEFAULT_IMG } from "constants/config";
-import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
 import { getAllProjects } from "functions/lib/fetcher";
 import { Projects as ProjectListType } from "functions/lib/types";
 import React, { useEffect } from "react";
@@ -31,7 +30,6 @@ export async function getStaticProps() {
 }
 
 function Projects({ projectList }: { projectList: ProjectListType }) {
-  const isDesktopWidth = useDesktopWidthCheck();
   const toast = useAppToast();
   const dataProjects = projectList ?? [];
 
@@ -97,14 +95,18 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                       ))}
                     </Flex>
                   </Stack>
-                  <Img
-                    src={
-                      project.image_url ? project.image_url[1].url : DEFAULT_IMG
-                    }
-                    objectFit="contain"
-                    boxSize={isDesktopWidth ? "150px" : "100px"}
-                    align="center"
-                  />
+                  <Box>
+                    <Img
+                      src={
+                        project.image_url
+                          ? project.image_url[1].url
+                          : DEFAULT_IMG
+                      }
+                      objectFit="cover"
+                      boxSize={["100px", "140px"]}
+                      align="center"
+                    />
+                  </Box>
                 </Flex>
               </Stack>
             </Box>

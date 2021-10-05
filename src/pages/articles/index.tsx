@@ -16,7 +16,6 @@ import {
   CHECK_YOUR_CONNECTION_MESSAGE,
   DEFAULT_IMG_ARTICLE,
 } from "constants/config";
-import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
 import { formatDate } from "functions/helpers/formatDate";
 import { getAllPosts } from "functions/lib/fetcher";
 import { Articles as ArticlesType } from "functions/lib/types";
@@ -35,7 +34,6 @@ export async function getStaticProps() {
 }
 
 function Articles({ articleList }: { articleList: ArticlesType }) {
-  const isDesktopWidth = useDesktopWidthCheck();
   const toast = useAppToast();
   const dataArticles = articleList ?? [];
 
@@ -72,7 +70,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
       </Text>
 
       {dataArticles.map((article, index) => (
-        <Skeleton key={index} isLoaded={dataArticles ? true : false}>
+        <Skeleton key={index} isLoaded={articleList ? true : false}>
           <Box
             _hover={{
               bg: "gray.500",
@@ -95,7 +93,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
                       : DEFAULT_IMG_ARTICLE
                   }
                   objectFit="contain"
-                  boxSize={isDesktopWidth ? "180px" : "100px"}
+                  boxSize={["100px", "140px"]}
                   align="center"
                 />
 
