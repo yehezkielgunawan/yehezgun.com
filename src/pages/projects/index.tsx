@@ -52,7 +52,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
         route="projects"
       />
 
-      <Heading as="h5" size="lg">
+      <Heading as="h5" size="xl">
         <b>Projects</b>
       </Heading>
       <Text fontSize="lg">

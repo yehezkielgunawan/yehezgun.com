@@ -59,7 +59,9 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
         align="center"
       >
         <Stack spacing={isDesktopWidth ? 4 : 3}>
-          <Heading as="h5">Yo, hi there!</Heading>
+          <Heading as="h5" size="xl">
+            Yo, hi there!
+          </Heading>
           {!isDesktopWidth && (
             <NextImage
               src="/assets/yehez-profile.png"
@@ -81,8 +83,9 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
           </Text>
           <Text fontSize="sm" textAlign="justify">
             <i>
-              Fun Fact: Actually, I&apos;m afraid of the live coding interview or
-              session, but if I have to, I &apos;ll do it whatever it takes 😁.
+              Fun Fact: Actually, I&apos;m afraid of the live coding interview
+              or session, but if I have to, I &apos;ll do it whatever it takes
+              😁.
             </i>
           </Text>
           <Flex gridGap={3} wrap="wrap">
@@ -120,11 +123,11 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
                 <GoPrimitiveDot />
                 <Stack spacing={2}>
                   <Text fontSize="md">
-                    <b>{experience.role_name}</b>
+                  💼 <b>{experience.role_name}</b>
                   </Text>
-                  <Text fontSize="sm">{experience.company_name}</Text>
+                  <Text fontSize="sm">🏢 {experience.company_name}</Text>
                   <Text fontSize="md">
-                    <b>
+                  ⌛ <b>
                       <i>{experience.duration}</i>
                     </b>
                   </Text>

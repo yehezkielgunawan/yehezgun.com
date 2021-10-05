@@ -64,7 +64,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
         pageDesc="Just some random thoughts. (The articles is written is Bahasa)"
         route="articles"
       />
-      <Heading as="h5" size="2xl">
+      <Heading as="h5" size="xl">
         <b>Articles</b>
       </Heading>
       <Text fontSize="lg">
@@ -88,21 +88,17 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
               passHref
             >
               <Flex as="a" gridGap={4} align="center">
-                {article.article_image ? (
-                  <Img
-                    src={article.article_image[0].url}
-                    objectFit="contain"
-                    boxSize={isDesktopWidth ? "180px" : "100px"}
-                    align="center"
-                  />
-                ) : (
-                  <Img
-                    src={DEFAULT_IMG_ARTICLE}
-                    objectFit="contain"
-                    boxSize={isDesktopWidth ? "180px" : "100px"}
-                    align="center"
-                  />
-                )}
+                <Img
+                  src={
+                    article.article_image
+                      ? article.article_image[0].url
+                      : DEFAULT_IMG_ARTICLE
+                  }
+                  objectFit="contain"
+                  boxSize={isDesktopWidth ? "180px" : "100px"}
+                  align="center"
+                />
+
                 <Stack spacing={2}>
                   <Text fontSize="xl">
                     <b>{article.title}</b>

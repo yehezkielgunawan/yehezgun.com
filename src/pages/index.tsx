@@ -22,7 +22,6 @@ import { techStackList } from "constants/techStacks";
 import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
 import { getAllProjects } from "functions/lib/fetcher";
 import { Projects } from "functions/lib/types";
-import NextLink from "next/link";
 import React, { useEffect } from "react";
 
 export async function getStaticProps() {
@@ -136,11 +135,9 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
           })}
         </SimpleGrid>
 
-        <NextLink href="/projects" passHref>
-          <Button as="a" variant="outline">
-            See More Projects
-          </Button>
-        </NextLink>
+        <Button as="a" href="/projects" variant="outline">
+          See More Projects
+        </Button>
       </Stack>
     </Main>
   );
