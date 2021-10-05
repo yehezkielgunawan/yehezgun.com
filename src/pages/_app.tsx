@@ -8,6 +8,7 @@ import "rc-dropdown/assets/index.css";
 import "katex/dist/katex.min.css";
 // // global style overrides for notion
 import "styles/notion.css";
+import "styles/notion-additional.css";
 // // global style overrides for prism theme (optional)
 import "styles/prism-theme.css";
 

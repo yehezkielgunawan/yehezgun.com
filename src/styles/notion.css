@@ -185,7 +185,6 @@
   max-height: calc(100vh - 148px - 16px);
   overflow: hidden auto;
   min-width: 222px;
-  overflow: auto;
 }
 
 .notion-aside-table-of-contents-header {
