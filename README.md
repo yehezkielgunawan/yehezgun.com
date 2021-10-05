@@ -20,3 +20,4 @@ I created this web by the help and resources that I got from :
 - [x] Image optimization using Image tag from Next JS
 - [x] Add ESLint config to sort and group imports (using [simple-sort-import](https://www.npmjs.com/package/eslint-plugin-simple-import-sort))
 - [x] Change react-notion to [react-notion-x](https://github.com/NotionX/react-notion-x) (Need future improvement, due to the lib's styling issues)
+- [ ] Add comment section for articles using [React utterances component](https://www.npmjs.com/package/utterances-react-component)
