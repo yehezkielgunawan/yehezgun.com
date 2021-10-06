@@ -1,6 +1,6 @@
 import { IconType } from "react-icons";
 import { FaAngular, FaNodeJs, FaReact } from "react-icons/fa";
-import { SiNextDotJs, SiTypescript } from "react-icons/si";
+import { SiNextdotjs, SiTypescript } from "react-icons/si";
 
 type SingleTechStack = {
   name: string;
@@ -26,7 +26,7 @@ export const techStackList: Array<SingleTechStack> = [
   },
   {
     name: "Next JS",
-    icon: SiNextDotJs,
+    icon: SiNextdotjs,
     description:
       "Next.js, this is my current go-to framework because of the static generation, dynamic paths, and built-in api.",
     footer_url: "https://nextjs.org/",

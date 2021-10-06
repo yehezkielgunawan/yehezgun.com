@@ -139,6 +139,7 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: ExtendedRecordMap }> =
               pdf: Pdf,
               equation: Equation,
             }}
+            showTableOfContents={true}
             darkMode={colorMode === "light" ? false : true}
           />
           <NextLink href="../" passHref>
