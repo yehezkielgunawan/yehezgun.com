@@ -66,9 +66,12 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
         <b>Articles</b>
       </Heading>
       <Text fontSize="lg">
-        Just some random thoughts. (The articles written in Bahasa)
+        Just some random thoughts. Mostly, the articles are written in Bahasa.
       </Text>
 
+      <Text fontSize="sm">
+        (Soon there is a feature to choose articles language)
+      </Text>
       {dataArticles.map((article, index) => (
         <Skeleton key={index} isLoaded={articleList ? true : false}>
           <Box
