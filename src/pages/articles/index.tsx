@@ -4,6 +4,7 @@ import {
   Flex,
   Heading,
   Img,
+  Select,
   Skeleton,
   Spinner,
   Stack,
@@ -20,7 +21,7 @@ import { formatDate } from "functions/helpers/formatDate";
 import { getAllPosts } from "functions/lib/fetcher";
 import { Articles as ArticlesType } from "functions/lib/types";
 import NextLink from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export async function getStaticProps() {
   const articleList = await getAllPosts();
@@ -36,6 +37,11 @@ export async function getStaticProps() {
 function Articles({ articleList }: { articleList: ArticlesType }) {
   const toast = useAppToast();
   const dataArticles = articleList ?? [];
+  const [language, setLanguage] = useState<string>("");
+
+  const filterByLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    return setLanguage(e.target.value);
+  };
 
   useEffect(() => {
     if (!articleList) {
@@ -46,7 +52,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
     }
   }, [articleList, toast]);
 
-  if (!dataArticles || dataArticles.length < 1)
+  if (!articleList || dataArticles.length < 1)
     return (
       <Main>
         <Center>
@@ -59,7 +65,7 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
     <Main>
       <AppHeader
         pageTitle="Articles"
-        pageDesc="Just some random thoughts. (The articles is written is Bahasa)"
+        pageDesc="Just some random thoughts."
         route="articles"
       />
       <Heading as="h5" size="xl">
@@ -69,48 +75,60 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
         Just some random thoughts. Mostly, the articles are written in Bahasa.
       </Text>
 
-      <Text fontSize="sm">
-        (Soon there is a feature to choose articles language)
-      </Text>
-      {dataArticles.map((article, index) => (
-        <Skeleton key={index} isLoaded={articleList ? true : false}>
-          <Box
-            _hover={{
-              bg: "gray.500",
-            }}
-            p={4}
-            overflow="hidden"
-            borderRadius={10}
-            borderWidth={2}
-          >
-            <NextLink
-              href={`/articles/post/${article.slug}`}
-              as={`/articles/post/${article.slug}`}
-              passHref
+      <Select
+        placeholder="Filter by Language"
+        w="240px"
+        onChange={filterByLanguage}
+      >
+        <option value="idn">Indonesian</option>
+        <option value="en">English</option>
+      </Select>
+      {dataArticles
+        .filter((article) => {
+          if (language.length > 0) {
+            return article.lang === language;
+          }
+          return article;
+        })
+        .map((article, index) => (
+          <Skeleton key={index} isLoaded={articleList ? true : false}>
+            <Box
+              _hover={{
+                bg: "gray.500",
+              }}
+              p={4}
+              overflow="hidden"
+              borderRadius={10}
+              borderWidth={2}
             >
-              <Flex as="a" gridGap={4} align="center">
-                <Img
-                  src={
-                    article.article_image
-                      ? article.article_image[0].url
-                      : DEFAULT_IMG_ARTICLE
-                  }
-                  objectFit="contain"
-                  boxSize={["100px", "140px"]}
-                  align="center"
-                />
+              <NextLink
+                href={`/articles/post/${article.slug}`}
+                as={`/articles/post/${article.slug}`}
+                passHref
+              >
+                <Flex as="a" gridGap={4} align="center">
+                  <Img
+                    src={
+                      article.article_image
+                        ? article.article_image[0].url
+                        : DEFAULT_IMG_ARTICLE
+                    }
+                    objectFit="contain"
+                    boxSize={["100px", "140px"]}
+                    align="center"
+                  />
 
-                <Stack spacing={2}>
-                  <Text fontSize="xl">
-                    <b>{article.title}</b>
-                  </Text>
-                  <Text>{formatDate(article.date)}</Text>
-                </Stack>
-              </Flex>
-            </NextLink>
-          </Box>
-        </Skeleton>
-      ))}
+                  <Stack spacing={2}>
+                    <Text fontSize={["lg", "xl"]}>
+                      <b>{article.title}</b>
+                    </Text>
+                    <Text>{formatDate(article.date)}</Text>
+                  </Stack>
+                </Flex>
+              </NextLink>
+            </Box>
+          </Skeleton>
+        ))}
     </Main>
   );
 }

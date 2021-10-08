@@ -21,6 +21,7 @@ export type SingleArticle = {
   date: string;
   article_image?: Array<SingleProjectImage>;
   external_url?: string;
+  lang: string;
 };
 
 export type Articles = Array<SingleArticle>;

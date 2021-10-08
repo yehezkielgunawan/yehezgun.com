@@ -54,8 +54,8 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
         <b>Projects</b>
       </Heading>
       <Text fontSize="lg">
-        This is my personal, experiment, and freelance (if it&apos;s a public
-        project) project list.
+        This is my personal, experiment, and freelance{" "}
+        <i> (if it&apos;s a public project) </i> project list.
       </Text>
 
       {dataProjects.map((project, index) => (
@@ -73,14 +73,14 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
             >
               <Stack spacing={3} px={3}>
                 <Flex justifyContent="space-between">
-                  <Text fontSize="xl">
+                  <Text fontSize={["lg", "xl"]}>
                     <b>{project.project_title}</b>
                   </Text>
                   <ExternalLinkIcon fontSize="lg" />
                 </Flex>
                 <Flex gridGap={2} align="center" justifyContent="space-between">
                   <Stack spacing={3}>
-                    <Text>{project.description}</Text>
+                    <Text fontSize={["md", "lg"]}>{project.description}</Text>
                     <Flex gridGap={2}>
                       {project.made_using.map((framework, frameworkIndex) => (
                         <Image
