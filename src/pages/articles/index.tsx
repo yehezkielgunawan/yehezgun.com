@@ -37,7 +37,7 @@ export async function getStaticProps() {
 function Articles({ articleList }: { articleList: ArticlesType }) {
   const toast = useAppToast();
   const dataArticles = articleList ?? [];
-  const [language, setLanguage] = useState<string>("");
+  const [language, setLanguage] = useState<string>("idn");
 
   const filterByLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     return setLanguage(e.target.value);
@@ -74,21 +74,16 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
       <Text fontSize="lg">
         Just some random thoughts. Mostly, the articles are written in Bahasa.
       </Text>
-
-      <Select
-        placeholder="Filter by Language"
-        w="240px"
-        onChange={filterByLanguage}
-      >
-        <option value="idn">Indonesian</option>
-        <option value="en">English</option>
-      </Select>
+      <Flex gridGap={4} align="center">
+        <Text fontSize="sm">Choose Language</Text>
+        <Select defaultValue="idn" w="240px" onChange={filterByLanguage}>
+          <option value="idn">Indonesian</option>
+          <option value="en">English</option>
+        </Select>
+      </Flex>
       {dataArticles
         .filter((article) => {
-          if (language.length > 0) {
-            return article.lang === language;
-          }
-          return article;
+          return article.lang === language;
         })
         .map((article, index) => (
           <Skeleton key={index} isLoaded={articleList ? true : false}>
