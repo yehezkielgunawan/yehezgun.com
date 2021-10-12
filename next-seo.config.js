@@ -12,7 +12,7 @@ const defaultSEOConfig = {
     type: "website",
     images: [
       {
-        url: "https://yehez-og-image.yehezgun.com/**yehezgun**.com.png?theme=dark&md=1&fontSize=50px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1631970666%2Fyehez_avatar_vkv7pc.png&widths=250&heights=250",
+        url: "https://yehez-og-image.yehezgun.com/**yehezgun**.com.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1634043457%2Fyehez-avatar_u3q505.png&widths=250&heights=250",
         alt: "yehezgun.com default og image",
         width: 800,
         height: 600,
@@ -28,7 +28,7 @@ const defaultSEOConfig = {
   additionalLinkTags: [
     {
       rel: "icon",
-      href: "/assets/yehez_avatar.png",
+      href: "/assets/yehez-avatar.png",
     },
   ],
 };
