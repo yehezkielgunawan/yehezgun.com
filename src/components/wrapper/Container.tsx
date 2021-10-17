@@ -10,7 +10,7 @@ type ContainerProps = {
 export const Container = ({ children }: ContainerProps) => {
   const { colorMode } = useColorMode();
 
-  const bgColor = { light: "white", dark: "gray.900" };
+  const bgColor = { light: "white", dark: "dark" };
 
   const color = { light: "black", dark: "white" };
   return (
