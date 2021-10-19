@@ -1,6 +1,6 @@
 # yehezgun.com
 
-![yehezgun.com](https://socialify.git.ci/yehezkielgunawan/yehezgun.com/image?description=1&descriptionEditable=Yehezkiel%20Gunawan%27s%20Personal%20Site%2C%20built%20with%20Next%20JS%20and%20Chakra%20UI.&font=KoHo&logo=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1631970666%2Fyehez_avatar_vkv7pc.png&owner=1&pattern=Circuit%20Board&theme=Dark)
+![yehezgun.com](https://socialify.git.ci/yehezkielgunawan/yehezgun.com/image?description=1&descriptionEditable=Yehezkiel%20Gunawan%27s%20Personal%20Site%2C%20built%20using%20Next.js%20and%20Chakra%20UI&font=KoHo&logo=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1634043457%2Fyehez-avatar_u3q505.png&owner=1&pattern=Circuit%20Board&theme=Dark)
 
 [yehezgun.com](https://yehezgun.com) is my personal dev site built using Next.js, Chakra-UI, Typescript, and React-Notion as CMS.
 
