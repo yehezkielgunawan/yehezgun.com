@@ -7,11 +7,17 @@ import {
   NOTION_EXPERIENCES,
   NOTION_PROJECTS,
 } from "../../constants/config";
-import { Articles, Experiences, Projects } from "./types";
+import { Articles, Experiences, Projects, SingleArticle } from "./types";
 
 export const getAllPosts = async (): Promise<Articles> => {
   return await fetch(`${API_HOST}/table/${NOTION_BLOG_ID}`).then((res) => {
     return res.json();
+  });
+};
+
+export const getSelectedPost = async (slug: string): Promise<SingleArticle> => {
+  return await getAllPosts().then((posts: Articles) => {
+    return posts.find((t: SingleArticle) => t.slug === slug);
   });
 };
 

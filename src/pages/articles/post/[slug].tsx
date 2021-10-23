@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import AppHeader from "components/ui/AppHeader";
 import { Main } from "components/wrapper/Main";
-import { getAllPosts, getBlocks } from "functions/lib/fetcher";
+import { getAllPosts, getBlocks, getSelectedPost } from "functions/lib/fetcher";
 import { SingleArticle } from "functions/lib/types";
 import NextLink from "next/link";
 import { BlogJsonLd } from "next-seo";
@@ -35,9 +35,7 @@ export async function getStaticProps({
   // Get all posts again
 
   // // Find the current blogpost by slug
-  const post = await getAllPosts().then((posts) => {
-    return posts.find((t) => t.slug === slug);
-  });
+  const post = await getSelectedPost(slug);
 
   const blocks = await getBlocks(post.id);
 
@@ -46,7 +44,7 @@ export async function getStaticProps({
       blocks,
       post,
     },
-    revalidate: 10,
+    revalidate: 30,
   };
 }
 

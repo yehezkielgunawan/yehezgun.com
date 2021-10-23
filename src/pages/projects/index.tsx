@@ -25,7 +25,7 @@ export async function getStaticProps() {
     props: {
       projectList,
     },
-    revalidate: 10,
+    revalidate: 30,
   };
 }
 
@@ -87,10 +87,11 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                           key={frameworkIndex}
                           src={framework.url}
                           bgColor="white"
-                          borderRadius={8}
+                          rounded="lg"
                           boxSize="40px"
                           fit="contain"
                           alt="project-image"
+                          boxShadow="lg"
                         />
                       ))}
                     </Flex>
@@ -102,6 +103,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                     objectFit="cover"
                     boxSize={["100px", "120px"]}
                     align="center"
+                    rounded="2xl"
                   />
                 </Flex>
               </Stack>

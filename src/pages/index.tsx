@@ -33,7 +33,7 @@ export async function getStaticProps() {
     props: {
       newestProjects,
     },
-    revalidate: 10,
+    revalidate: 30,
   };
 }
 
