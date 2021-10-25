@@ -24,7 +24,6 @@ import {
   Equation,
   Modal,
   NotionRenderer,
-  Pdf,
 } from "react-notion-x";
 
 export async function getStaticProps({
@@ -134,7 +133,6 @@ const BlogPost: React.FC<{ post: SingleArticle; blocks: ExtendedRecordMap }> =
               collection: Collection,
               collectionRow: CollectionRow,
               modal: Modal,
-              pdf: Pdf,
               equation: Equation,
             }}
             showTableOfContents={true}
