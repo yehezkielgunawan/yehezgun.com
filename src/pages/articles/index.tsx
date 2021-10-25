@@ -19,7 +19,7 @@ import {
 } from "constants/config";
 import { formatDate } from "functions/helpers/formatDate";
 import { getAllPosts } from "functions/lib/fetcher";
-import { Articles as ArticlesType } from "functions/lib/types";
+import { Articles as ArticlesType, SingleArticle } from "functions/lib/types";
 import NextLink from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -82,8 +82,11 @@ function Articles({ articleList }: { articleList: ArticlesType }) {
         </Select>
       </Flex>
       {dataArticles
-        .filter((article) => {
+        .filter((article: SingleArticle) => {
           return article.lang === language;
+        })
+        .sort((a: SingleArticle, b: SingleArticle) => {
+          return Date.parse(b.date) - Date.parse(a.date);
         })
         .map((article, index) => (
           <Skeleton key={index} isLoaded={articleList ? true : false}>
