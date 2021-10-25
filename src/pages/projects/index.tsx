@@ -86,12 +86,10 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
                         <Image
                           key={frameworkIndex}
                           src={framework.url}
-                          bgColor="white"
                           rounded="lg"
                           boxSize="40px"
                           fit="contain"
                           alt="project-image"
-                          boxShadow="lg"
                         />
                       ))}
                     </Flex>
