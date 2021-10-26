@@ -16,7 +16,7 @@ export const getAllPosts = async (): Promise<Articles> => {
 };
 
 export const getSelectedPost = async (slug: string): Promise<SingleArticle> => {
-  return await getAllPosts().then((posts: Articles) => {
+  return getAllPosts().then((posts: Articles) => {
     return posts.find((t: SingleArticle) => t.slug === slug);
   });
 };
