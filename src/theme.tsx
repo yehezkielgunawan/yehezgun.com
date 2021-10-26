@@ -3,7 +3,7 @@ import "@fontsource/catamaran";
 import { extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 
-const fonts = { body: "Catamaran" };
+const fonts = { body: "Catamaran", heading: "Catamaran" };
 
 const breakpoints = createBreakpoints({
   sm: "40em",
