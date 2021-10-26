@@ -22,3 +22,5 @@ I created this web by the help and resources that I got from :
 - [x] Change react-notion to [react-notion-x](https://github.com/NotionX/react-notion-x) (Need future improvement, due to the lib's styling issues)
 - [x] Add choose language (English  - Indonesian) for article.
 - [ ] Add comment section for articles using [React utterances component](https://www.npmjs.com/package/utterances-react-component) or using [giscus](https://github.com/giscus/giscus-component/tree/main/packages/react)
+- [ ] Update Popover Component so it can recieve any flexible inputs
+- [ ] Add Popover Effect to About Me page (for the contact list flex)
