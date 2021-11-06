@@ -72,7 +72,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
         </Stack>
         {isDesktopWidth && (
           <Image
-            src="assets/yehez-avatar.png"
+            src="assets/peep.png"
             w="30%"
             objectFit="contain"
             loading="lazy"
