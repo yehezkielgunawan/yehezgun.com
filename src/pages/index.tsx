@@ -87,12 +87,13 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
           <b>Current Favourite Tech Stacks</b>
         </Text>
         <Flex gridGap={4} wrap="wrap">
-          {techStackList.map((techStack, index) => (
+        {techStackList.map((techStack, index) => (
             <PopoverComponent
               key={index}
               boxIcon={techStack.icon}
               description={techStack.description}
-              footer_url={techStack.footer_url}
+              url={techStack.footer_url}
+              isSimple={false}
             />
           ))}
         </Flex>

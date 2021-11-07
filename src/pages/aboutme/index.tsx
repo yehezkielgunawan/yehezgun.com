@@ -2,15 +2,14 @@ import {
   Divider,
   Flex,
   Heading,
-  Icon,
   Image,
-  Link as ChakraLink,
   Skeleton,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import AppHeader from "components/ui/AppHeader";
 import { useAppToast } from "components/ui/AppToast";
+import PopoverComponent from "components/ui/PopoverComponent";
 import { Main } from "components/wrapper/Main";
 import { CHECK_YOUR_CONNECTION_MESSAGE } from "constants/config";
 import { contactList } from "constants/contactList";
@@ -91,15 +90,13 @@ function AboutMe({ experienceList }: { experienceList: Experiences }) {
           </Text>
           <Flex gridGap={3} wrap="wrap">
             {contactList.map((contact, index) => (
-              <ChakraLink key={index} isExternal href={contact.link_route}>
-                <Icon
-                  _hover={{
-                    bgColor: "gray.500",
-                  }}
-                  as={contact.icon}
-                  fontSize="4xl"
-                />
-              </ChakraLink>
+              <PopoverComponent
+                key={index}
+                boxIcon={contact.icon}
+                description={contact.name}
+                url={contact.link_route}
+                isSimple={true}
+              />
             ))}
           </Flex>
         </Stack>
