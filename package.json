@@ -28,7 +28,7 @@
     "react-notion-x": "^4.9.1"
   },
   "devDependencies": {
-    "@types/node": "^14.17.20",
+    "@types/node": "^14.17.32",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
