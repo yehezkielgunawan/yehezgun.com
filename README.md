@@ -23,4 +23,5 @@ I created this web by the help and resources that I got from :
 - [x] Add choose language (English  - Indonesian) for article.
 - [x] Update Popover Component so it can recieve any flexible inputs
 - [x] Add Popover Effect to About Me page (for the contact list flex)
+- [ ] Update the footer of the web (Add starter template and personal docs link)
 - [ ] Add comment section for articles using [React utterances component](https://www.npmjs.com/package/utterances-react-component) or using [giscus](https://github.com/giscus/giscus-component/tree/main/packages/react)
