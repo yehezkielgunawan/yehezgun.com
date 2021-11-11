@@ -1,14 +1,27 @@
 import { FaDev, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FcTemplate } from "react-icons/fc";
 import { IconType } from "react-icons/lib";
 import { MdEmail } from "react-icons/md";
+import { SiReadthedocs } from "react-icons/si";
 
-type SingleContact = {
+export type SingleContact = {
   name: string;
   icon: IconType;
   link_route: string;
 };
 
 export const contactList: Array<SingleContact> = [
+  {
+    name: "Starter Template",
+    icon: FcTemplate,
+    link_route:
+      "https://github.com/yehezkielgunawan?tab=repositories&q=starter&type=&language=&sort=",
+  },
+  {
+    name: "Personal Docs",
+    icon: SiReadthedocs,
+    link_route: "https://docs.yehezgun.com",
+  },
   {
     name: "Linkedin",
     icon: FaLinkedin,
