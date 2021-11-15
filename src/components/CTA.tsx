@@ -45,56 +45,52 @@ export const CTA = () => {
           <b>yehezgun.com</b>
         </Text>
 
-        <Flex gridGap={3} alignItems="center">
-          {isDesktopWidth ? (
-            <>
+        <Flex gridGap={3} alignItems="center" display={["none", "flex"]}>
+          {menuList.map((menu, index) => (
+            <NextLink key={index} href={menu.route} passHref>
+              <Text
+                as="a"
+                fontSize="md"
+                _hover={{
+                  color: "gray.500",
+                }}
+                color={router.pathname === menu.route && "gray.500"}
+                cursor="pointer"
+              >
+                <b>{menu.label}</b>
+              </Text>
+            </NextLink>
+          ))}
+          <DarkModeSwitch />
+        </Flex>
+
+        <Flex gridGap={3} alignItems="center" display={["flex", "none"]}>
+          <DarkModeSwitch />
+          <Menu autoSelect={false}>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+            />
+            <MenuList>
               {menuList.map((menu, index) => (
                 <NextLink key={index} href={menu.route} passHref>
-                  <Text
+                  <MenuItem
                     as="a"
-                    fontSize="md"
                     _hover={{
-                      color: "gray.500",
+                      bg: "gray.500",
                     }}
-                    color={router.pathname === menu.route && "gray.500"}
-                    cursor="pointer"
+                    bg={router.pathname === menu.route && "gray.500"}
                   >
-                    <b>{menu.label}</b>
-                  </Text>
+                    <Text fontSize="md">
+                      <b>{menu.label}</b>
+                    </Text>
+                  </MenuItem>
                 </NextLink>
               ))}
-              <DarkModeSwitch />
-            </>
-          ) : (
-            <>
-              <DarkModeSwitch />
-              <Menu autoSelect={false}>
-                <MenuButton
-                  as={IconButton}
-                  aria-label="Options"
-                  icon={<HamburgerIcon />}
-                  variant="outline"
-                />
-                <MenuList>
-                  {menuList.map((menu, index) => (
-                    <NextLink key={index} href={menu.route} passHref>
-                      <MenuItem
-                        as="a"
-                        _hover={{
-                          bg: "gray.500",
-                        }}
-                        bg={router.pathname === menu.route && "gray.500"}
-                      >
-                        <Text fontSize="md">
-                          <b>{menu.label}</b>
-                        </Text>
-                      </MenuItem>
-                    </NextLink>
-                  ))}
-                </MenuList>
-              </Menu>
-            </>
-          )}
+            </MenuList>
+          </Menu>
         </Flex>
       </Flex>
     </Box>
