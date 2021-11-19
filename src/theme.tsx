@@ -12,9 +12,15 @@ const breakpoints = createBreakpoints({
   xl: "80em",
 });
 
+const config = {
+  initialColorMode: "system",
+  useSystemColorMode: false,
+};
+
 const theme = extendTheme({
   fonts,
   breakpoints,
+  config,
 });
 
 export default theme;
