@@ -20,17 +20,19 @@ import { Main } from "components/wrapper/Main";
 import { CHECK_YOUR_CONNECTION_MESSAGE } from "constants/config";
 import { techStackList } from "constants/techStacks";
 import { useDesktopWidthCheck } from "functions/helpers/desktopWidthCheck";
-import { getAllProjects } from "functions/lib/fetcher";
+import { getAllProjectsTable } from "functions/lib/fetcher";
 import { Projects } from "functions/lib/types";
 import NextLink from "next/link";
 import React, { useEffect } from "react";
 
 export async function getStaticProps() {
-  const projectList = await getAllProjects();
+  const projectList = await getAllProjectsTable();
   const newestProjects = projectList.slice(0, 2);
+  // const newProjectList = await getAllProjectsTable();
 
   return {
     props: {
+      // newProjectList,
       newestProjects,
     },
     revalidate: 30,
@@ -87,7 +89,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
           <b>Current Favourite Tech Stacks</b>
         </Text>
         <Flex gridGap={4} wrap="wrap">
-        {techStackList.map((techStack, index) => (
+          {techStackList.map((techStack, index) => (
             <PopoverComponent
               key={index}
               boxIcon={techStack.icon}
@@ -107,7 +109,7 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
           {dataProjects.map((project, index) => {
             return (
               <Skeleton key={index} isLoaded={dataProjects ? true : false}>
-                <ChakraLink isExternal href={project.project_url}>
+                <ChakraLink isExternal href={project.fields.project_url}>
                   <Box
                     p={1}
                     overflow="hidden"
@@ -119,12 +121,12 @@ const Index = ({ newestProjects }: { newestProjects: Projects }) => {
                   >
                     <Stack spacing={3} align="center">
                       <Text textAlign="center" fontSize="lg">
-                        <b>{project.project_title}</b>
+                        <b>{project.fields.project_title}</b>
                         <ExternalLinkIcon pl={1} />
                       </Text>
                       <Divider />
                       <Img
-                        src={project.image_url[0].url}
+                        src={project.fields.image_url[0].url}
                         objectFit="contain"
                         w="100%"
                         h="150px"

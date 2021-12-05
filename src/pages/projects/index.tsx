@@ -14,12 +14,12 @@ import AppHeader from "components/ui/AppHeader";
 import { useAppToast } from "components/ui/AppToast";
 import { Main } from "components/wrapper/Main";
 import { CHECK_YOUR_CONNECTION_MESSAGE, DEFAULT_IMG } from "constants/config";
-import { getAllProjects } from "functions/lib/fetcher";
+import { getAllProjectsTable } from "functions/lib/fetcher";
 import { Projects as ProjectListType } from "functions/lib/types";
 import React, { useEffect } from "react";
 
 export async function getStaticProps() {
-  const projectList = await getAllProjects();
+  const projectList = await getAllProjectsTable();
 
   return {
     props: {
@@ -60,7 +60,7 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
 
       {dataProjects.map((project, index) => (
         <Skeleton key={index} isLoaded={dataProjects ? true : false}>
-          <ChakraLink isExternal href={project.project_url}>
+          <ChakraLink isExternal href={project.fields.project_url}>
             <Box
               _hover={{
                 bg: "gray.500",
@@ -74,29 +74,35 @@ function Projects({ projectList }: { projectList: ProjectListType }) {
               <Stack spacing={3} px={3}>
                 <Flex justifyContent="space-between">
                   <Text fontSize={["lg", "xl"]}>
-                    <b>{project.project_title}</b>
+                    <b>{project.fields.project_title}</b>
                   </Text>
                   <ExternalLinkIcon fontSize="lg" />
                 </Flex>
                 <Flex gridGap={2} align="center" justifyContent="space-between">
                   <Stack spacing={3}>
-                    <Text fontSize={["md", "lg"]}>{project.description}</Text>
+                    <Text fontSize={["md", "lg"]}>
+                      {project.fields.description}
+                    </Text>
                     <Flex gridGap={2}>
-                      {project.made_using.map((framework, frameworkIndex) => (
-                        <Image
-                          key={frameworkIndex}
-                          src={framework.url}
-                          rounded="lg"
-                          boxSize="40px"
-                          fit="contain"
-                          alt="project-image"
-                        />
-                      ))}
+                      {project.fields.made_using.map(
+                        (framework, frameworkIndex) => (
+                          <Image
+                            key={frameworkIndex}
+                            src={framework.url}
+                            rounded="lg"
+                            boxSize="40px"
+                            fit="contain"
+                            alt="project-image"
+                          />
+                        ),
+                      )}
                     </Flex>
                   </Stack>
                   <Img
                     src={
-                      project.image_url ? project.image_url[1].url : DEFAULT_IMG
+                      project.fields.image_url
+                        ? project.fields.image_url[1].url
+                        : DEFAULT_IMG
                     }
                     objectFit="cover"
                     boxSize={["100px", "120px"]}
