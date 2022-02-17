@@ -18,7 +18,7 @@
     "@next/eslint-plugin-next": "^11.1.2",
     "airtable": "^0.11.1",
     "framer-motion": "^4.0.3",
-    "next": "^11.1.2",
+    "next": "^12.1.0",
     "next-seo": "^4.28.1",
     "notion-client": "^4.9.4",
     "notion-types": "^4.8.2",
